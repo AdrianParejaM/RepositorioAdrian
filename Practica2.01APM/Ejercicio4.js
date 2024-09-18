@@ -20,11 +20,11 @@ function factura (nombreProducto = "Producto genérico", precio = 100, impuestoP
 //Prueba con todo genérico.
 factura();
 
-//Prueba correcta
+//Prueba correcta.
 factura("Portátil", 1400, 18);
 
-//Prueba correcta (aunque no se por qué no pone el . para los decimales)
+//Prueba correcta (aunque no se por qué no pone el . para los decimales).
 factura("Teléfono", "200", "20");
 
-//Prueba que indica el error
+//Prueba que indica el error.
 factura("Tablet", "abc", 15);
