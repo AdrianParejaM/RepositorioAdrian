@@ -31,4 +31,4 @@ function unoMayorQueOtro (persona1, persona2) {
 
 //Mostramos el mensaje en la consola.
 
-console.log(`¿Tiene Marcos un IMC mayor que el de Juan?: ` + unoMayorQueOtro(Marcos, Juan));
+console.log(`¿Tiene Marcos un IMC mayor que el de Juan?: ${unoMayorQueOtro(Marcos, Juan)}.`);
