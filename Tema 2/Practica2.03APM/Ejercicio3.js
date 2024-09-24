@@ -14,7 +14,7 @@ var discente = {
     },
 
     //Creamos la función para calcular la media de los 3 trimestres.
-    calcularMedia: function (discente) {
+    calcularMedia: function () {
 
         let resultado = (discente.notas.primera + discente.notas.segunda + discente.notas.tercera) / 3;
     
@@ -23,7 +23,7 @@ var discente = {
     },
 
     //Creamos la función para imprimir las aficiones.
-    imprimirAficiones: function (discente){
+    imprimirAficiones: function (){
 
         console.log("Las aficiones del discente son: ");
     
@@ -36,7 +36,7 @@ var discente = {
     },
 
     //Creamos la función para que imprima por consola el informe completo.
-    imprimirInforme: function (discente){
+    imprimirInforme: function (){
 
         for (var clave in discente) {
             if (discente.hasOwnProperty(clave)) {
@@ -51,10 +51,10 @@ var discente = {
 };
 
 //Probamos la función "calcularMedia".
-console.log(discente.calcularMedia(discente));
+console.log(discente.calcularMedia());
 
 //Probamos la función "imprimirAficiones".
-console.log(discente.imprimirAficiones(discente));
+console.log(discente.imprimirAficiones());
 
 //Probamos la función "imprimirInforme".
-console.log(discente.imprimirInforme(discente));
+console.log(discente.imprimirInforme());
