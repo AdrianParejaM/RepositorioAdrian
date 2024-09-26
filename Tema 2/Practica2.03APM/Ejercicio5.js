@@ -1,6 +1,6 @@
 "use strict";
 
-//Creamos el objeto JSON.
+//Ejercicios anteriores.
 var discente = {
 
     id: "123456789",
@@ -13,7 +13,6 @@ var discente = {
         tercera: 9,
     },
 
-    //Creamos la función para calcular la media de los 3 trimestres.
     calcularMedia: function () {
 
         let resultado = (discente.notas.primera + discente.notas.segunda + discente.notas.tercera) / 3;
@@ -22,7 +21,6 @@ var discente = {
     
     },
 
-    //Creamos la función para imprimir las aficiones.
     imprimirAficiones: function (){
 
         console.log("Las aficiones del discente son: ");
@@ -35,7 +33,6 @@ var discente = {
     
     },
 
-    //Creamos la función para que imprima por consola el informe completo.
     imprimirInforme: function (){
 
         for (var clave in discente) {
@@ -49,3 +46,49 @@ var discente = {
     }
 
 };
+
+//Empezamos el ejercicio 5.
+
+function imprimirObjeto(discente) {
+
+    for (const clave in discente) {
+        if (discente.hasOwnProperty(clave)) {
+
+            let valor = discente[clave];
+            let tipo = typeof valor;
+
+            //Si es un array imprime lo siguiente.
+            if (Array.isArray(valor)) {
+
+                console.log(`${clave} (Array): ${valor}`);
+            
+            //Si es un objeto imprime lo siguiente.
+            } else if (tipo === 'object'){
+
+                console.log(`${clave} (Objeto): `);
+                //Esto no lo he conseguido sacar yo solo, he intentado varias formas y al final le pedí ayuda al chat.
+                for (let subClave in valor) {
+                    
+                    console.log(` ${subClave} ${valor[subClave]}`);
+                }
+            //Si es una función imprime lo siguiente.    
+            } else if (tipo === 'function'){
+
+                //Aquí he hecho que no imprima la función ya que si se quiere imprimir con la función imprimirInforme lo hace
+                //por lo tanto aquí solo indico que es una función y nada más.
+                console.log(`${clave} (Función)`);
+            
+            //Es el método default para los demás tipos.
+            } else{
+
+                console.log(`${clave} (${tipo}): ${valor}`);
+
+            }
+            
+        }
+    }
+
+}
+
+//Hacemos la impresión del discente.
+imprimirObjeto(discente);

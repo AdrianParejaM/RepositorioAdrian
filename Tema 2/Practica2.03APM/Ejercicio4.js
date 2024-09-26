@@ -71,3 +71,18 @@ var discente = {
 };
 
 //Comenzamos el ejercicio 4.
+
+function matricularAlumno(curso, discente) {
+
+    curso.Alumnado.push(discente);
+
+}
+
+//Creamos el curso.
+let curso1 = console.log(crearCurso("Desarrollo web en entorno cliente", 2024, "Hola, qué tal"));
+
+//Matriculamos al discente.
+matricularAlumno(curso1, discente);
+
+//Lo mostramos en la consola.
+informeCompleto(curso1);
