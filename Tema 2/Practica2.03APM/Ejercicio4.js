@@ -9,11 +9,16 @@ function crearCurso (curso, anyo, descripcion){
         "Año" : anyo,
         "Descripción" : descripcion,
         Alumnado: [],
-        
+
+        matricularAlumno: function(discente) {
+            this.Alumnado.push(discente);
+            return `El alumno ${discente.nombre} ${discente.apellidos} ha sido matriculado satisfactoriamente`;
     }
 
 }
+}
 
+//Función del ejercicio 4.
 function informeCompleto (variableInforme) {
 
     for (let elemento in variableInforme) {
@@ -70,19 +75,23 @@ var discente = {
 
 };
 
-//Comenzamos el ejercicio 4.
+//Creamos otro discente para probar.
+var discente2 = {
 
-function matricularAlumno(curso, discente) {
-
-    curso.Alumnado.push(discente);
-
+    id: "987654321",
+    nombre: "Antonio",
+    apellidos: "Recio Matamoros",
+    aficiones: ["Marisco", "Ser presidente de su comunidad"],
+    notas : {
+        primera: 9,
+        segunda: 6,
+        tercera: 10,
+    }
 }
 
 //Creamos el curso.
-let curso1 = console.log(crearCurso("Desarrollo web en entorno cliente", 2024, "Hola, qué tal"));
+let curso1 = crearCurso("Desarrollo web en entorno cliente", 2024, "Hola, qué tal");
 
-//Matriculamos al discente.
-matricularAlumno(curso1, discente);
-
-//Lo mostramos en la consola.
-informeCompleto(curso1);
+//Matriculamos a los discentes y los mostramos.
+console.log(curso1.matricularAlumno(discente));
+console.log(curso1.matricularAlumno(discente2));

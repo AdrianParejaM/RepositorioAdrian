@@ -86,6 +86,7 @@ function imprimirObjeto(discente) {
             }
             
         }
+        
     }
 
 }
