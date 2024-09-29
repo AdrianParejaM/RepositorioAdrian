@@ -27,7 +27,7 @@ let nombresConId = nombres.map((nombres, indice) => {
 
 //Ejercicio 2.
 
-//Creamos la función para generar un array aleatorio.
+//Creamos la función para generar un array aleatorio(bueno, la ha creado el gpt).
 function generarArrayAleatorio() {
     let array = [];
     for (let i = 0; i < 10; i++) {
