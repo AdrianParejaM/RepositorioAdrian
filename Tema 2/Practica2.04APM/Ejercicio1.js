@@ -1,10 +1,7 @@
 "use strict";
 
 //Importamos todo lo necesario para este ejercicio.
-import {pasarMayusculas} from "./Biblioteca/funcionesCuartaPractica.js";
-
-//Creamos el array con los 5 nombres.
-let nombres = ["Adrián Pareja", "Antonio Recio", "Vicente Maroto", "Fermín Trujillo", "Amador Rivas"];
+import {nombres, pasarMayusculas, nombresConId} from "./Biblioteca/funcionesCuartaPractica.js";
 
 //Se muestran todos los nombres en mayúscula.
 console.log(nombres.map(pasarMayusculas));
@@ -13,3 +10,4 @@ console.log(nombres.map(pasarMayusculas));
 console.log(nombres.sort().reverse());
 
 //Se muestra la posición y el nombre.
+console.log(nombresConId);
