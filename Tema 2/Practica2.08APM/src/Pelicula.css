@@ -1,0 +1,12 @@
+*{
+    background-color: rgb(39, 39, 39);
+}
+
+.pelicula_contenedor{
+    border: 2px solid white;
+    padding: 2%;
+}
+
+.pelicula_cartelera{
+    width: 40%;
+}
