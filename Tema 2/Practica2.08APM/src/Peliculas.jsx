@@ -4,11 +4,13 @@ import Pelicula from './Pelicula.jsx';
 
 const Peliculas = () => {
 
+    //Copiamos todo lo que hay en el array de películas en un nuevo array.
     const peliculas = [...todas_peliculas.peliculas];
 
     return(
         <>
         <div>
+        {/*Realizamos una ternaria para poder imprimir todos los valores de cada una de las diferentes películas, y en caso de que no existan valores salte un mensaje de error.*/}
         {peliculas.length
           ? peliculas.map((valor) => {
               return (
