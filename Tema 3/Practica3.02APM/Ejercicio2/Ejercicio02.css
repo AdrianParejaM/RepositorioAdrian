@@ -1,0 +1,25 @@
+*{
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    margin-top: 5%;
+    font-size: 3rem;
+}
+
+table{
+    margin-top: 8%;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 1%;
+}
+
+td{
+    border: 1px solid blue;
+    text-align: center;  
+}
+
+.primoEs{
+    background-color: red;
+    font-weight: bold;
+}
