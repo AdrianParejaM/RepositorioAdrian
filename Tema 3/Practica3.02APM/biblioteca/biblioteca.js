@@ -86,11 +86,10 @@ function cambiarColorParrafo() {
 
 //Lista de enlaces de imágenes.
 var imagenes = [
-    "https://album.mediaset.es/cimg/1000001/2017/02/14/r1.jpg",
-    "https://www.moncloa.com/wp-content/uploads/2022/07/la-que-se-avecina-1.jpg",
-    "https://album.mediaset.es/cimg/1000001/2017/02/14/f1.jpg?w=480",
-    "https://es.web.img3.acsta.net/newsv7/22/03/15/15/13/2329900.jpg",
-    "https://imagenes.20minutos.es/files/image_640_auto/uploads/imagenes/2023/07/28/amador-rivas-pablo-chiapella.jpeg",
+  "https://album.mediaset.es/cimg/1000001/2017/02/14/r1.jpg",
+  "https://www.moncloa.com/wp-content/uploads/2022/07/la-que-se-avecina-1.jpg",
+  "https://album.mediaset.es/cimg/1000001/2017/02/14/f1.jpg?w=480",
+  "https://imagenes.20minutos.es/files/image_640_auto/uploads/imagenes/2023/07/28/amador-rivas-pablo-chiapella.jpeg",
 ];
 
 //Referenciamos el 'img' del HTML.
@@ -101,16 +100,16 @@ var indice = 0;
 
 //Función para cambiar la imagen con la transición.
 function cambiarImagen() {
-  
-  imagenActual.style.opacity = 0;
 
-  setTimeout(function() {
-      indice = (indice + 1) % imagenes.length;
-      imagenActual.src = imagenes[indice];
+imagenActual.style.opacity = 0;
 
-      
-      imagenActual.style.opacity = 1;
-  }, 1000); 
+setTimeout(function() {
+    indice = (indice + 1) % imagenes.length;
+    imagenActual.src = imagenes[indice];
+
+    
+    imagenActual.style.opacity = 1;
+}, 1000); 
 };
 
 
