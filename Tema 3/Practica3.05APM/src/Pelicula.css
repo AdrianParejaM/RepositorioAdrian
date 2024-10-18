@@ -1,0 +1,31 @@
+*{
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+
+.pelicula_contenedor{
+    border: 2px solid white;
+    padding: 2%;
+}
+
+.pelicula_cartelera{
+    width: 40%;
+}
+
+.pelicula_caja_elenco{
+    padding: 1%;
+    display: none;
+}
+
+.mostrar{
+    display: block;
+}
+
+.pelicula_boton_elenco {
+    background-color: rgb(2, 2, 163);
+    margin: 2%;
+}
+
+.pelicula_recaudacion{
+    display: none;
+}
