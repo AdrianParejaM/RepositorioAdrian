@@ -12,7 +12,7 @@
     width: 40%;
 }
 
-.pelicula_caja_elenco{
+.pelicula_caja_ocultar{
     padding: 1%;
     display: none;
 }
@@ -21,11 +21,11 @@
     display: block;
 }
 
+.mostrar2{
+    display: block;
+}
+
 .pelicula_boton_elenco {
     background-color: rgb(2, 2, 163);
     margin: 2%;
-}
-
-.pelicula_recaudacion{
-    display: none;
 }

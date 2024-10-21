@@ -38,18 +38,18 @@ const Pelicula = (props) => {
                 Elenco
                 </button>
 
-                <button className="pelicula_boton_recaudacion"
+                <button className="pelicula_boton_elenco"
                     onClick={() => {
                         mostrarTaquilla(refe2);
                     }}
                 >
                 Recaudación
                 </button>
-                <div ref={refe2} className="pelicula_recaudacion">
-                <p>{recaudacion}</p>
+                <div ref={refe2}  className="pelicula_caja_ocultar">
+                    <p>{recaudacion}</p>
                 </div>
                 {/*Fin código modificado práctica 3.05*/}
-                <div ref={refe} className="pelicula_caja_elenco">
+                <div ref={refe} className="pelicula_caja_ocultar">
                     {/*Se mapea para que muestre todos los actores con su respectiva imágen y boigrafía.*/}
                     {actores.map((actor, index) => (
                         <div className="pelicula_elenco" key={index}>
