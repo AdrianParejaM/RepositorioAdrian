@@ -45,11 +45,11 @@ const Pelicula = (props) => {
                 >
                 Recaudación
                 </button>
-                <div ref={refe2}  className="pelicula_caja_ocultar">
+                <div ref={refe2} className="pelicula_caja_ocultar">
                     <p>{recaudacion}</p>
-                </div>
-                {/*Fin código modificado práctica 3.05*/}
+                </div> 
                 <div ref={refe} className="pelicula_caja_ocultar">
+                {/*Fin código modificado práctica 3.05*/}
                     {/*Se mapea para que muestre todos los actores con su respectiva imágen y boigrafía.*/}
                     {actores.map((actor, index) => (
                         <div className="pelicula_elenco" key={index}>
