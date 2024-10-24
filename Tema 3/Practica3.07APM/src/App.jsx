@@ -13,8 +13,9 @@ function App() {
       <div className='contenedor'></div>
       <Cabecera /> 
       <Menu />
+      <Rutas />
       <Contenido>
-        <Rutas />
+        
       </Contenido>
       <Pie />
     </>
