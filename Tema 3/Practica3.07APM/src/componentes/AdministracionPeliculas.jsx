@@ -1,25 +1,26 @@
 import React from "react";
 import { Link, useNavigate, Outlet } from "react-router-dom";
+import "../css/Menu.css";
 
-const Administracion = () => {
-  const navegar = useNavigate();
+const AdministracionPeliculas = () => {
+  //Creamos este componente administración para implementarlo en su respectivo componente y que quede más limpio.
   return (
     <>
-      <div className='administracion-navegacion'>
+      <div className='adminPelis'>
         <Link
-          className='administracion-elementomenu'
+          className='menu_link'
           to='/peliculas/titulo'
         >
           Título
         </Link>
         <Link
-          className='administracion-elementomenu'
+          className='menu_link'
           to='/peliculas/interprete'
         >
           Intérprete
         </Link>
         <Link
-          className='administracion-elementomenu'
+          className='menu_link'
           to='/peliculas/director'
         >
           Director
@@ -28,17 +29,8 @@ const Administracion = () => {
       <div>
         <Outlet />
       </div>
-      <div>
-        <button
-          onClick={() => {
-            navegar("/");
-          }}
-        >
-          Volver a inicio
-        </button>
-      </div>
     </>
   );
 };
 
-export default Administracion;
+export default AdministracionPeliculas;

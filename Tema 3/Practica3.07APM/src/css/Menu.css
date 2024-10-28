@@ -2,17 +2,23 @@
     display: inline;
     margin: 10px;
     padding: 10px;
-    border: solid rgb(0, 0, 0) 1px;
-    color: rgb(0, 0, 0);
+    border: solid rgb(255, 255, 255) 1px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(28, 167, 120);
 }
 
 .menu_link:hover {
-    background-color: rgb(0, 0, 0);
-    color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color:rgb(28, 167, 120);
+    border: solid rgb(28, 167, 120) 1px;
     cursor: pointer;
     transition: 0.3s;    
 }
 
 nav{
     margin: 20px;
+}
+
+.adminPelis{
+    margin-bottom: 4%;
 }

@@ -13,7 +13,7 @@ const Interprete = () => {
           navegar("/");
         }}
       >
-        Volver a inicio.
+        Volver a inicio
       </button>
     </>
   )
