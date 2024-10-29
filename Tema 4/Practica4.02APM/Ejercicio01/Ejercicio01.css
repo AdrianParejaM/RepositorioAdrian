@@ -1,0 +1,7 @@
+.elemento1, .elemento3, .elemento5{
+    display: none;
+}
+
+h3{
+    cursor: pointer;
+}
