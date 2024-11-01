@@ -1,7 +1,13 @@
-.elemento1, .elemento3, .elemento5{
-    display: none;
+h3 {
+    cursor: pointer;
+    margin: 2%;
 }
 
-h3{
-    cursor: pointer;
+p {
+    display: none;
+    margin: 2%;
+}
+
+p.visible {
+    display: block;
 }
