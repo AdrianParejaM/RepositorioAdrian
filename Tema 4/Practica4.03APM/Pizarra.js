@@ -1,7 +1,7 @@
 "use strict";
 
 //Importamos todo lo necesario para este ejercicio.
-import {crearPizarra} from "./Biblioteca.js";
+import {crearPizarra, resetearTabla, pintarCelda} from "./Biblioteca.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -16,39 +16,50 @@ document.addEventListener("DOMContentLoaded", () => {
     //Generamos la pizarra.
     crearPizarra(pizarra);
 
+    //Creamos la variable pintar para jugar con ella.
+    var pintar = true;
+
+    //Nos creamos el color default.
+    let colorDefault = "white";
+
+    //Creamos la variable pintar.
+    var pintar = true;
+
+    //Nos creamos la constante colores con cada color.
+    const colores = {
+        red: "rgb(255,0,0)",
+        blue: "rgb(0,0,255)",
+        green: "rgb(0,128,0)",
+        yellow: "rgb(255,255,0)",
+        black: "rgb(0,0,0)",
+        white: "rgb(255,255,255)",
+      };
+
     // Evento para seleccionar un color de la paleta.
-    for (let i = 0; i < todosColores.length; i++) {
-        todosColores[i].addEventListener("click", () => {
-            colorActual = todosColores[i].className;
-            colorSeleccionado.style.backgroundColor = colorActual;
-            pintando = true; 
-        });
-    }
-
-    // Manejar el clic en la pizarra.
-    pizarra.addEventListener("click", (evento) => {
-        const celda = evento.target;
-        if (celda.tagName === "TD") {
-            if (pintando) {
-                celda.style.backgroundColor = colorActual
-            }
+    todosColores.addEventListener("click", (evento) => {
+        if (evento.target.className==="colorCuadrado") {
+            colorDefault = colores[evento.target.id];
+            pintar = false;
         }
-    });
 
-    // Evento para borrar la pizarra.
-    botonBorrar.addEventListener("click", (evento) => {
-        const celdas = pizarra.querySelectorAll("td");
-        celdas.forEach((celda) => {
-            celda.style.backgroundColor = "";
-        });
     }, false);
 
-    
+    // Manejar el clic en la pizarra.
+    pizarra.addEventListener("mouseover", (evento) => {
+        if (pintar) {
+          pintarCelda(evento.target, colorDefault);
+        }
+      });
 
+     
+    pizarra.addEventListener("click", () => {
+        pintar = !pintar;
+    });
 
-
-    
-
+    //Reseteamos la tabla con la función creada en la biblioteca.
+    botonBorrar.addEventListener("click", () => {
+        resetearTabla();
+    });
 
     //FIN DE DOMContentLoaded.
 });

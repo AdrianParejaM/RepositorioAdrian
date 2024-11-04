@@ -1,6 +1,6 @@
 "use strict";
 
-//Creamos la tabla
+//Creamos la tabla para la pizarra.
 function crearPizarra(tabla) {
     
 
@@ -16,7 +16,7 @@ function crearPizarra(tabla) {
         for (let j = 0; j < columnas; j++) {
             
             let celda = document.createElement("td");
-
+            celda.classList.add("pizarra-celda");
             fila.appendChild(celda);
         }
 
@@ -24,7 +24,22 @@ function crearPizarra(tabla) {
     }
 }
 
+// Las celdas se pintan según el color seleccionado.
+
+function pintarCelda(celda, colorSeleccionado) {
+    celda.style.backgroundColor = colorSeleccionado;
+  }
+
+
+//Función para resetear la tabla.
+function resetearTabla() {
+    const pizarraCelda = document.querySelectorAll(".pizarra-celda");
+    pizarraCelda.forEach((evento) => {
+      evento.style.backgroundColor = "white";
+    });
+  }
+
 
 
 //Exportamos todo.
-export {crearPizarra};
+export {crearPizarra, resetearTabla, pintarCelda};
