@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Pizarra.css">
+    <title>Pizarra</title>
+</head>
+<body>
+    <div class="contenedor">
+
+        <h1>¡Pintarrajea!</h1>
+    
+    <div class="contenedorColores">
+
+        <table class="selectorColores">
+            <tr class="todosColores">
+                <td class="black"></td>
+                <td class="red"></td>
+                <td class="blue"></td>
+                <td class="yellow"></td>
+                <td class="green"></td>
+                <td class="white"></td>
+            </tr>
+            <tr class="seleccionado">
+                <td class="colorSeleccionado"></td>
+            </tr>
+        </table>
+        <button name="Borrar" class="borrar">Borrar</button>
+    </div>
+
+    <div class="contenedorPizarra">
+        <table id="pizarraPintar" class="pizarra"></table>
+    </div>
+
+    </div>
+
+    <script type="module" src="./Pizarra.js"></script>
+</body>
+</html>
