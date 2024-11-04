@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //Aquí dentro va todo el ejercicio.
 
     // Seleccionamos los elementos que vamos a usar.
-    const todosColores = document.getElementsByClassName("todosColores");
-    const colorSeleccionado = document.getElementsByClassName("colorSeleccionado");
+    const todosColores = document.getElementById("todosColores");
+    const colorSeleccionado = document.getElementById("colorSeleccionado");
     const pizarra = document.getElementById("pizarraPintar");
-    const botonBorrar = document.getElementsByClassName("borrar");
+    const botonBorrar = document.getElementById("borrar");
 
+    //Generamos la pizarra.
     crearPizarra(pizarra);
 
     // Evento para seleccionar un color de la paleta.

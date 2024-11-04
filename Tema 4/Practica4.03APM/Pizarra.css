@@ -22,7 +22,7 @@ h1 {
     text-align: center;
 }
 
-.contenedorColores {
+#contenedorColores {
     display: flex;
     flex-direction: column; 
     justify-content: flex-start;
@@ -31,7 +31,7 @@ h1 {
     padding: 10px;
 }
 
-.contenedorPizarra {
+#contenedorPizarra {
 
     display: flex;
     justify-content: center;
@@ -43,14 +43,14 @@ h1 {
 /* Ajuste de la tabla de colores para que las celdas tengan un tamaño uniforme 
 (te he dejado este comentario aquí porque le he pedido ayuda al gpt porque no me
 se me quedaban bien los colores).*/
-.selectorColores {
+#selectorColores {
     border-collapse: collapse;
     table-layout: fixed; /* Fija el ancho de cada columna (esto es lo que hizo el gpt).*/
     width: 50%;
     margin: 10%;
 }
 
-.selectorColores td {
+#selectorColores td {
     width: 25px;
     height: 25px;
     cursor: pointer;
@@ -58,31 +58,26 @@ se me quedaban bien los colores).*/
     justify-content: space-between;
 }
 
-.black {
+#black {
     background-color: black;
 }
-.red {
+#red {
     background-color: red;
 }
-.blue {
+#blue {
     background-color: blue;
 }
-.yellow {
+#yellow {
     background-color: yellow;
 }
-.green {
+#green {
     background-color: green;
 }
-.white {
+#white {
     background-color: white;
 }
 
-.seleccionado {
-
-    padding: 200px;
-}
-
-.borrar {
+#borrar {
     margin-top: 10px; /* Espacio entre la tabla y el botón */
     padding: 8px 16px;
     font-size: 16px;
@@ -93,6 +88,6 @@ se me quedaban bien los colores).*/
     cursor: pointer;
 }
 
-.borrar:hover {
+#borrar:hover {
     background-color: #c9302c; /* Cambio de color en hover */
 }
