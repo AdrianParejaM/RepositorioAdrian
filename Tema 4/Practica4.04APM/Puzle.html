@@ -9,35 +9,39 @@
 <body>
     <div id="zonaArrastrable"></div>
     <h1>¡Vamos a realizar un puzle del Barça!</h1>
-    <div id="contenedorPuzle">
-        <img class="arrastrable" src="./imagenes/pieza-7.png" alt="Imágen">
-        <img class="arrastrable" src="./imagenes/pieza-3.png" alt="Imágen">
-        <img class="arrastrable" src="./imagenes/pieza-6.png" alt="Imágen">
-        <img class="arrastrable" src="./imagenes/pieza-9.png" alt="Imágen">
-        <img class="arrastrable" src="./imagenes/pieza-1.png" alt="Imágen">
-        <img class="arrastrable" src="./imagenes/pieza-5.png" alt="Imágen">
-        <img class="arrastrable" src="./imagenes/pieza-4.png" alt="Imágen">
-        <img class="arrastrable" src="./imagenes/pieza-8.png" alt="Imágen">
-        <img class="arrastrable" src="./imagenes/pieza-2.png" alt="Imágen">
+    <div id="contenedorPuzle" class="soltarImg">
+        <img class="arrastrable" id="img1" src="./imagenes/pieza-7.png" alt="Imágen">
+        <img class="arrastrable" id="img2" src="./imagenes/pieza-3.png" alt="Imágen">
+        <img class="arrastrable" id="img3" src="./imagenes/pieza-6.png" alt="Imágen">
+        <img class="arrastrable" id="img4" src="./imagenes/pieza-9.png" alt="Imágen">
+        <img class="arrastrable" id="img5" src="./imagenes/pieza-1.png" alt="Imágen">
+        <img class="arrastrable" id="img6" src="./imagenes/pieza-5.png" alt="Imágen">
+        <img class="arrastrable" id="img7" src="./imagenes/pieza-4.png" alt="Imágen">
+        <img class="arrastrable" id="img8" src="./imagenes/pieza-8.png" alt="Imágen">
+        <img class="arrastrable" id="img9" src="./imagenes/pieza-2.png" alt="Imágen">
     </div>
 
     <div id="contenedorPuzleHecho" class="soltables">
         <div class="fila1">
-            <div class="soltarImg"></div>
-            <div class="soltarImg"></div>
-            <div class="soltarImg"></div>
+            <div class="soltarImg imgs"></div>
+            <div class="soltarImg imgs"></div>
+            <div class="soltarImg imgs"></div>
         </div>
         <div class="fila2">
-            <div class="soltarImg"></div>
-            <div class="soltarImg"></div>
-            <div class="soltarImg"></div> 
+            <div class="soltarImg imgs"></div>
+            <div class="soltarImg imgs"></div>
+            <div class="soltarImg imgs"></div> 
         </div>
         <div class="fila3">
-            <div class="soltarImg"></div>
-            <div class="soltarImg"></div>
-            <div class="soltarImg"></div>
+            <div class="soltarImg imgs"></div>
+            <div class="soltarImg imgs"></div>
+            <div class="soltarImg imgs"></div>
         </div>
         
+    </div>
+
+    <div id="contenedorBoton">
+        <button id="botonBorrar">Reiniciar</button>
     </div>
 
     <p id="mensaje" class="oculto">Enhorabuena, has completado el puzle.</p>
