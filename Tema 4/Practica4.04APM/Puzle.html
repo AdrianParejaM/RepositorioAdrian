@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Puzle.css">
+    <title>Puzle</title>
+</head>
+<body>
+    <div id="zonaArrastrable"></div>
+    <h1>¡Vamos a realizar un puzle del Barça!</h1>
+    <div id="contenedorPuzle">
+        <img class="arrastrable" src="./imagenes/pieza-7.png" alt="Imágen">
+        <img class="arrastrable" src="./imagenes/pieza-3.png" alt="Imágen">
+        <img class="arrastrable" src="./imagenes/pieza-6.png" alt="Imágen">
+        <img class="arrastrable" src="./imagenes/pieza-9.png" alt="Imágen">
+        <img class="arrastrable" src="./imagenes/pieza-1.png" alt="Imágen">
+        <img class="arrastrable" src="./imagenes/pieza-5.png" alt="Imágen">
+        <img class="arrastrable" src="./imagenes/pieza-4.png" alt="Imágen">
+        <img class="arrastrable" src="./imagenes/pieza-8.png" alt="Imágen">
+        <img class="arrastrable" src="./imagenes/pieza-2.png" alt="Imágen">
+    </div>
+
+    <div id="contenedorPuzleHecho" class="soltables">
+        <div class="fila1">
+            <div class="soltarImg"></div>
+            <div class="soltarImg"></div>
+            <div class="soltarImg"></div>
+        </div>
+        <div class="fila2">
+            <div class="soltarImg"></div>
+            <div class="soltarImg"></div>
+            <div class="soltarImg"></div> 
+        </div>
+        <div class="fila3">
+            <div class="soltarImg"></div>
+            <div class="soltarImg"></div>
+            <div class="soltarImg"></div>
+        </div>
+        
+    </div>
+
+    <p id="mensaje" class="oculto">Enhorabuena, has completado el puzle.</p>
+
+    <script type="module" src="./Puzle.js"></script>
+</body>
+</html>
