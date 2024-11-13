@@ -1,0 +1,21 @@
+  .estilo1 {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: aquamarine;
+  }
+  
+  .estilo2 {
+    color: green;
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: underline;
+    background-color: gold;
+  }
+  
+  .estilo3 {
+    color: red;
+    font-size: 32px;
+    background-color: lightyellow;
+    font-weight: bold;
+  }

@@ -19,17 +19,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const label = document.createElement('label');
       label.textContent = numero;
     
-      // Añadir el checkbox y la etiqueta al contenedor
+      // Añadir el checkbox y la etiqueta al contenedor.
       container.appendChild(checkbox);
       container.appendChild(label);
     }
     
-    // Agregar los event listeners a los botones
-    document.getElementById('marcarPares').addEventListener('click', marcarPares);
-
-
-
-    document.getElementById('desmarcar').addEventListener('click', desmarcarTodos);
+    // Agregamos los event listeners a los botones.
+    document.getElementById('marcarPares').addEventListener(
+      'click', 
+      (evento) => {
+        marcarPares();
+    },
+    false);
+    document.getElementById('desmarcar').addEventListener(
+      'click',
+      (evento) => {
+        desmarcarTodos();
+      },
+    false);
 
     // FIN DE DOMContentLoaded.
 });

@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./Ejercicio2.css">
     <title>Ejercicio 2</title>
 </head>
 <body>
+    <form id="formulario">
+        <label for="texto">Texto:</label>
+        <textarea id="texto" placeholder="Escriba el texto..."></textarea>
+    <br>
+        <label for="estilo">Selecciona un estilo:</label>
+        <select id="estilo">
+          <option value="estilo1" selected>Estilo 1</option>
+          <option value="estilo2">Estilo 2</option>
+          <option value="estilo3">Estilo 3</option>
+        </select>
+    <br>
+        <input type="button" id="crear" value="Crear Párrafo"></button>
+      </form>
     
+      <div id="resultado"></div>
+
     <!--Usar input type button para que NO recargue la página usando button submit-->
     <script type="module" src="./Ejercicio2.js"></script>
 </body>
