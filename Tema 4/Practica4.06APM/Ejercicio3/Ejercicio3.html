@@ -3,10 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./Ejercicio3.css">
     <title>Ejercicio 3</title>
 </head>
 <body>
+
+    <form id="discoForm">
+        <label for="nombreDisco">Nombre del Disco:</label>
+        <input type="text" id="nombreDisco" name="nombreDisco" required>
+        <br>
+        <label for="grupo">Grupo o Intérprete:</label>
+        <input type="text" id="grupo" name="grupo" required>
+        <br>
+        <label for="anio">Año de Publicación:</label>
+        <input type="number" id="anio" name="anio" min="1900" max="2099" required>
+        <br>
+        <label for="tipo">Tipo de Música:</label>
+        <select id="tipo" name="tipo" required>
+          <option value="rock">Rock</option>
+          <option value="progressive">Progressive</option>
+          <option value="punk">Punk</option>
+          <option value="trash">Trash</option>
+        </select>
+        <br>
+        <label for="localizacion">Localización (Estantería):</label>
+        <input type="text" id="localizacion" name="localizacion" required>
+        <br>
+        <label for="prestado">Prestado:</label>
+        <input type="checkbox" id="prestado" name="prestado">
+        <br>
+        <input type="button" id="guardar" value="Guardar"></button>
+        <input type="button" id="mostrar" value="Mostrar"></button>
+      </form>
+      
+      <div id="listadoDiscos"></div>
     
     <script type="module" src="./Ejercicio3.js"></script>
 </body>

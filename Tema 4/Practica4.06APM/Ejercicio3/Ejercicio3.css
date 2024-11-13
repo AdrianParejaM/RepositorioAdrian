@@ -1,0 +1,31 @@
+#guardar, #mostrar {
+    margin-top: 15px;
+    padding: 5px;
+    cursor: pointer;
+}
+  
+#listadoDiscos {
+    max-width: 600px;
+    margin: 20px auto;
+}
+  
+.disco {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f4f4f4;
+}
+  
+.disco p {
+    margin: 5px 0;
+}
+
+  /* Estilos de error del ejercicio 5 */
+.input-error {
+    border: 3px solid red;
+}
+  
+.label-error {
+    color: red;
+}
