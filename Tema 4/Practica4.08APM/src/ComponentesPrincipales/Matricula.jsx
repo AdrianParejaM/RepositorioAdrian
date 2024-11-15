@@ -61,13 +61,16 @@ const Matricula = () => {
           }}
         >
         <h1>Alumnos del instituto.</h1>
-          {listadoDiscentes.map((discentes, indice) => {
-            return (
-              <p id={indice} key={crypto.randomUUID()}>
-                {discentes}
-              </p>
-            );
-          })}
+
+          {listadoDiscentes.length === 0
+            ? <h4>No hay alumnos seleccionados todavía.</h4>
+            : listadoDiscentes.map((discentes, indice) => {
+              return (
+                <p id={indice} key={crypto.randomUUID()}>
+                  {discentes}
+                </p>
+              );
+            })}
           
      </div>
 

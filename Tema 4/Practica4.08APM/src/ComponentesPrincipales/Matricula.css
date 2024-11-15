@@ -1,6 +1,11 @@
 h1{
     color: black;
 }
+
+h4{
+    font-weight: normal;
+}
+
 p{
     color: black;
     cursor: pointer;

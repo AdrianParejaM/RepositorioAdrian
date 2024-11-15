@@ -24,9 +24,14 @@ const Listado = () => {
     <>
         <div id='parrafo'>
           <h1>Números aleatorios.</h1>
-                {listado.length === 0 
-                    ? 'No hay números generados todavía.' 
-                    : listado.join(', ')} 
+          <ul>
+          {listado.length === 0 
+            ? <li className='listado'>No hay números generados todavía.</li> 
+            : listado.map((numero, index) => (
+                <li className='listado' key={index}>{numero}</li>
+              ))
+          }
+          </ul>
         </div>
         <button className='boton'
         onClick={() => {

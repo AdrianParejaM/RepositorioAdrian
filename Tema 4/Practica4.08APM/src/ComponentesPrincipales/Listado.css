@@ -4,6 +4,10 @@
     color: black;
 }
 
+.listado{
+    list-style: none;
+}
+
 .boton{
     margin: 5px;
     padding: 10px 20px;
