@@ -7,13 +7,13 @@ const Listado = () => {
     //Creamos el array vacío que será el default.
     const valorInicial = [];
 
-    //Creamos el useState.
+    //Creamos el "useState" para ,manejar el listado de números.
     const [listado, setListado] = useState(valorInicial);
 
-    //Añadimos el número al div.
+    //Añadimos el número al "div".
     const anadirNumero = () => {
         let nuevoNum;
-        //Hacemos el do while para comprobar que el número no esté dentro.
+        //Hacemos el "do while" para comprobar que el número no esté dentro y si está, que vuelva a generar un número que no exista en el listado.
         do {
             nuevoNum = generarNumeroAleatorio();
         } while (listado.includes(nuevoNum));

@@ -9,7 +9,7 @@ h4{
 p{
     color: black;
     cursor: pointer;
-    /* He reciclado tanto este efecto como el del hover del del puzle :) */
+    /* He reciclado tanto este efecto como el del "hover" del ejercicio del puzle :) */
     transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 

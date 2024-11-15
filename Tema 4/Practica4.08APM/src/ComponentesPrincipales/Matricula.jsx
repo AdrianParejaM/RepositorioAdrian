@@ -10,10 +10,10 @@ const Matricula = () => {
     //Creamos el array vacío que será el default.
     const valorInicial = [];
 
-    //Creamos el useState.
+    //Creamos el "useState" para manejar a los discentes.
     const [listadoDiscentes, setListadoDiscentes] = useState(valorInicial);
 
-    //Creamos el useState para ordenar de forma ascendente/descendente.
+    //Creamos el "useState" para ordenar de forma ascendente/descendente.
     const [ordenAscendente, setOrdenAscendente] = useState(true);
 
     //Mostrar sólo los discentes del curso 2DAW.
@@ -24,16 +24,13 @@ const Matricula = () => {
       };
 
     //Mostrar los discentes de primer curso.
-
     const mostrarPrimerCurso = () => {
         const filtrados = todosDiscentes.filter((discente) => discente.curso.startsWith("1"))
         .map((discente) => `${discente.nombre} ${discente.apellidos} - ${discente.curso}`);
         setListadoDiscentes(filtrados);
       };
 
-
     //Mostrar los discentes del ciclo DAW.
-
     const mostrarDAW = () => {
         const filtrados = todosDiscentes.filter((discente) => discente.curso.includes("DAW"))
         .map((discente) => `${discente.nombre} ${discente.apellidos} - ${discente.curso}`);
@@ -41,7 +38,6 @@ const Matricula = () => {
       };
 
     //mostrar los discentes a los que le guste la lectura.
-
     const mostrarLectores = () => {
         const filtrados = todosDiscentes.filter((discente) => discente.aficiones.includes("lectura"))
         .map((discente) => `${discente.nombre} ${discente.apellidos} - ${discente.curso}`);
@@ -49,7 +45,6 @@ const Matricula = () => {
       };
 
     //Pulsar sobre un discente y que se borre.
-
     const borrarConClick = (id) => {
         const nuevosDiscentes = listadoDiscentes.filter((discente, indice) => {
           return parseInt(id) !== indice;
@@ -112,7 +107,7 @@ const Matricula = () => {
 
     <button className='boton'
         onClick={() => {
-          //Con el localeCompare me ha ayudado el chatGPT ya que dijiste que había que utilizar sort pero no logré que se ordenase sin ayuda =_(.
+          //Con el "localeCompare" me ha ayudado el chatGPT ya que dijiste que había que utilizar "sort" pero no logré que se ordenase sin ayuda =_(.
           if (ordenAscendente) {
             setListadoDiscentes([...listadoDiscentes].sort((a, b) => a.localeCompare(b)));
         } else {
