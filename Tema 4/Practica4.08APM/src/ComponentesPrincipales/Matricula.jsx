@@ -13,6 +13,9 @@ const Matricula = () => {
     //Creamos el useState.
     const [listadoDiscentes, setListadoDiscentes] = useState(valorInicial);
 
+    //Creamos el useState para ordenar de forma ascendente/descendente.
+    const [ordenAscendente, setOrdenAscendente] = useState(true);
+
     //Mostrar sólo los discentes del curso 2DAW.
     const mostrar2DAW = () => {
         const filtrados = todosDiscentes.filter((discente) => discente.curso === "2DAW")
@@ -109,7 +112,13 @@ const Matricula = () => {
 
     <button className='boton'
         onClick={() => {
-            listadoDiscentes.sort(listadoDiscentes.nombre);
+          //Con el localeCompare me ha ayudado el chatGPT ya que dijiste que había que utilizar sort pero no logré que se ordenase sin ayuda =_(.
+          if (ordenAscendente) {
+            setListadoDiscentes([...listadoDiscentes].sort((a, b) => a.localeCompare(b)));
+        } else {
+            setListadoDiscentes([...listadoDiscentes].sort((a, b) => b.localeCompare(a)));
+        }
+        setOrdenAscendente(!ordenAscendente);
           }}
         >
         Ordenar listado
