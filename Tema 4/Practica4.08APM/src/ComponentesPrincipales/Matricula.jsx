@@ -70,7 +70,8 @@ const Matricula = () => {
                   {discentes}
                 </p>
               );
-            })}
+            })
+          }
           
      </div>
 

@@ -27,9 +27,11 @@ const Listado = () => {
           <ul>
           {listado.length === 0 
             ? <li className='listado'>No hay números generados todavía.</li> 
-            : listado.map((numero, index) => (
+            : listado.map((numero, index) => {
+              return (
                 <li className='listado' key={index}>{numero}</li>
-              ))
+              );
+            })
           }
           </ul>
         </div>
