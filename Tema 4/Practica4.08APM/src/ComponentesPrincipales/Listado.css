@@ -1,0 +1,21 @@
+#parrafo{
+    margin-bottom: 5%;
+    font-size: 20px;
+    color: black;
+}
+
+.boton{
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.boton:hover{
+    background-color: #fff;
+    color: #007BFF;
+}

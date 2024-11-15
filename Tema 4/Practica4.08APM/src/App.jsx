@@ -1,12 +1,13 @@
 import './App.css';
-import Listado from "./Listado.jsx";
+import Listado from "./ComponentesPrincipales/Listado.jsx";
+import Matricula from './ComponentesPrincipales/Matricula.jsx';
 
 function App() {
 
   return (
     <>
-      <h1>Esta es la aplicación crack.</h1>
       <Listado />
+      <Matricula />
     </>
   )
 };
