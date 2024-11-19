@@ -11,7 +11,7 @@ const Localizador = () => {
     //Creamos el "useState" para ,manejar el listado de números.
     const [y, setY] = useState(valorInicial);
 
-    // Obtener las coordenadas actuales del ratón
+    // Obtener las coordenadas actuales del ratón.
     const coordenadas = (evento) => {
         setX(evento.clientX);
         setY(evento.clientY);

@@ -1,19 +1,11 @@
-import { useState } from 'react';
 import './App.css';
-import MontarLocalizador from './ComponentesPrincipales/MontarLocalizador.jsx';
-import MontarColorines from './ComponentesPrincipales/MontarColorines.jsx';
-import MontarContador from './ComponentesPrincipales/MontarContador.jsx';
-import MontarCronometro from './ComponentesPrincipales/MontarCronometro.jsx';
+import Montar from './ComponentesPrincipales/Montar.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <MontarLocalizador />
-      <MontarColorines />
-      <MontarContador />
-      <MontarCronometro />
+      <Montar />
     </>
   );
 };
