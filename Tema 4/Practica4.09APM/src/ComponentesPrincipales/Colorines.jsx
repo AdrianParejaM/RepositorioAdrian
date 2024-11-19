@@ -23,7 +23,8 @@ const Colorines = () => {
 
         return () => {
           document.removeEventListener("dblclick", colorin);
-          document.body.style.backgroundColor = "#242424";
+          //He puesto este fondo cuando se desmonte el componente porque es el que tiene el ordenador de clase.
+          document.body.style.backgroundColor = "#FFF";
         };
     }, []);
 
