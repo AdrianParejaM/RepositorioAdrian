@@ -1,0 +1,45 @@
+/*Esto es parte de css antiguos.*/
+* {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+  }
+
+.error {
+    border: 2px solid red;
+  }
+  
+  .errores {
+    color: red;
+    margin-top: 10px;
+  }
+
+  .guardar, .mostrar{
+    margin: 5% 3%;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.4em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #0b2b3d;
+    color: rgb(247, 247, 247);
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  
+  .guardar:hover, .mostrar:hover{
+    background-color: rgb(247, 247, 247);
+    color: #0b2b3d;
+
+  }
+
+  .disco {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
