@@ -10,6 +10,7 @@ const Discos = () => {
     anio: "",
     tipo: "rock",
     localizacion: "",
+    prestado: "false",
   };
 
   // Estado para los valores del disco.
@@ -210,7 +211,7 @@ const Discos = () => {
           <option value="trash">Trash</option>
         </select>
         <br />
-        <label htmlFor="localizacion">Localización (Estantería):</label>
+        <label htmlFor="localizacion">Localización:</label>
         <input
           name="localizacion"
           className="localizacion"
@@ -220,6 +221,26 @@ const Discos = () => {
             actualizarDatos(evento);
           }}
           required
+        />
+        <br />
+        <label htmlFor="prestado">Prestado: </label>
+        Sí<input
+          name="prestado"
+          className="prestadoSi"
+          type="radio"
+          value={valoresDisco.prestado}
+          onChange={(evento) => {
+            actualizarDatos(evento);
+          }}
+        />
+        No<input
+          name="prestado"
+          className="prestadoNo"
+          type="radio"
+          value={valoresDisco.prestado}
+          onChange={(evento) => {
+            actualizarDatos(evento);
+          }}
         />
         <br />
         <input
@@ -244,7 +265,7 @@ const Discos = () => {
         <div id="listadoDiscos">
           {discos.map((disco, index) => (
             <div key={index} className="disco">
-              <p>Nombre:{disco.nombreDisco}</p>
+              <p>Nombre: {disco.nombreDisco}</p>
               <p>Grupo o Intérprete: {disco.grupo}</p>
               <p>Año de Publicación: {disco.anio}</p>
               <p>Tipo de Música: {disco.tipo}</p>
