@@ -45,9 +45,7 @@ function marcarPares() {
   //Ejercicio 3.
 
 //Crea una constante con un array vacío.
-  const bibliotecaDiscos = {
-    discos: []
-  };
+    let discos = [];
 
   /* La función de validación la he intentado tanto solo como preguntándole al bot y no he conseguido que me salga bien, si que me muestra las cosas de color rojo pero siempre =_=.
   
@@ -124,7 +122,8 @@ function marcarPares() {
       localizacion,
       prestado
     };
-    bibliotecaDiscos.discos.push(disco);
+    
+    discos = [...discos, disco];
   }
   
   // Función para generar el HTML del listado de discos.
@@ -133,7 +132,7 @@ function marcarPares() {
     listadoContainer.innerHTML = '';
   
     // Crear el HTML para cada disco.
-    bibliotecaDiscos.discos.forEach(disco => {
+    discos.forEach(disco => {
       const discoDiv = document.createElement('div');
       discoDiv.className = 'disco';
       discoDiv.innerHTML = `
