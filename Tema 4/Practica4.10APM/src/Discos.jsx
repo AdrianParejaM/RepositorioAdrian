@@ -28,8 +28,16 @@ const Discos = () => {
 
   // Función para actualizar los valores del disco.
   const actualizarDatos = (evento) => {
-    const { name, value } = evento.target;
-    setValoresDisco({ ...valoresDisco, [name]: value });
+    const { name, value, type, checked } = evento.target;
+  
+    if (type === "radio") {
+      setValoresDisco({
+        ...valoresDisco,
+        [name]: value === "true",
+      });
+    } else {
+      setValoresDisco({ ...valoresDisco, [name]: value });
+    }
   };
 
   // Validaciones.
@@ -228,7 +236,8 @@ const Discos = () => {
           name="prestado"
           className="prestadoSi"
           type="radio"
-          value={valoresDisco.prestado === true}
+          value="true"
+          checked={valoresDisco.prestado === true}
           onChange={(evento) => {
             actualizarDatos(evento);
           }}
@@ -237,7 +246,8 @@ const Discos = () => {
           name="prestado"
           className="prestadoNo"
           type="radio"
-          value={valoresDisco.prestado === false}
+          value="false"
+          checked={valoresDisco.prestado === false}
           onChange={(evento) => {
             actualizarDatos(evento);
           }}
