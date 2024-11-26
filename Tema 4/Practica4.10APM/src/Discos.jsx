@@ -141,7 +141,7 @@ const Discos = () => {
   // Función para guardar los discos.
   const guardarDisco = (evento) => {
     if (validarFormulario(evento)) {
-      const nuevoDisco = { ...valoresDisco, prestado: false };
+      const nuevoDisco = { ...valoresDisco};
       setDiscos([...discos, nuevoDisco]);
       setValoresDisco(disco);
       setErrores(erroresIniciales);
@@ -228,7 +228,7 @@ const Discos = () => {
           name="prestado"
           className="prestadoSi"
           type="radio"
-          value={valoresDisco.prestado}
+          value={valoresDisco.prestado === true}
           onChange={(evento) => {
             actualizarDatos(evento);
           }}
@@ -237,7 +237,7 @@ const Discos = () => {
           name="prestado"
           className="prestadoNo"
           type="radio"
-          value={valoresDisco.prestado}
+          value={valoresDisco.prestado === false}
           onChange={(evento) => {
             actualizarDatos(evento);
           }}
@@ -255,11 +255,13 @@ const Discos = () => {
           type="button"
           className="mostrar"
           value="Mostrar"
-          onClick={mostrarDisco}
+          onClick={(evento) => {
+            mostrarDisco();
+          }}
         />
       </form>
 
-      <Errores erroresMostrar={errores}/>
+        <Errores erroresMostrar={errores}/>
 
       {mostrarListado && (
         <div id="listadoDiscos">
