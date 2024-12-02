@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch((error) => {
-      console.error("Error al obtener las películas: ", error);
+      //Se pone donde deben de ir las películas el error.
+      listaPeliculas.textContent = (`Error al obtener las películas: ${error}`);
     });
 
 
