@@ -1,7 +1,7 @@
 "use strict";
 
 //Importamos todo lo necesario para este ejercicio.
-import {fechaFormatoEuropeo, listaPelis} from "./Biblioteca.js";
+import {fechaFormatoEuropeo, listaPelis} from "./biblioteca.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
