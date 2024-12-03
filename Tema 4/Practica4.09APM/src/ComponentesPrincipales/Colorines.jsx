@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {generarColorHexadecimal} from  "../../Biblioteca/Biblioteca.js";
+import {generarColorHexadecimal} from  "../Biblioteca/Biblioteca.js";
 
 const Colorines = () => {
 
