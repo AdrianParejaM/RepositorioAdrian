@@ -8,16 +8,5 @@ function fechaFormatoEuropeo(dateString) {
   return `${day}/${month}/${year}`;
 }
 
-//Función para mostrar las películas en su respectivo contenedor.
-function listaPelis(peliculas, contenedor) {
-    peliculas.forEach((pelicula) => {
-    const listaLi = document.createElement("li");
-    listaLi.textContent = pelicula.title;
-    listaLi.classList.add("elementoPelicula");
-
-    contenedor.appendChild(listaLi);
-  });
-}
-
 //Exportamos todo.
-export {fechaFormatoEuropeo, listaPelis};
+export {fechaFormatoEuropeo};
