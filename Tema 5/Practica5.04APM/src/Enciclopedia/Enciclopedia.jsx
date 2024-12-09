@@ -1,0 +1,55 @@
+import React, { useEffect, useState } from 'react';
+import './Enciclopedia.css';
+import MostrarPeliculas from "./MostrarPeliculas.jsx";
+import MostrarContenido from './MostrarContenido.jsx';
+import { obtenerDatos } from "../Biblioteca/funcionesDatos.js";
+
+const Enciclopedia = () => {
+  const [peliculas, setPeliculas] = useState([]);
+  const [error, setError] = useState("");
+  const [peliculaSeleccionada, setPeliculaSeleccionada] = useState(null);
+
+  //Obtenemos la API.
+  const url = "https://swapi.dev/api/films/";
+
+  const traerPeliculas = async () => {
+
+    try {
+
+      const datos = await obtenerDatos(url);
+      setPeliculas(datos.results);
+      
+    } catch (error) {
+
+      setError(`Error al obtener las películas: ${error.message}`);
+      
+    }
+  
+  };
+
+  useEffect(() => {
+    traerPeliculas();
+  }, []);
+
+  return (
+    <>
+      <h1>Enciclopedia de Star Wars</h1>
+      <div id="contenedor">
+        <div id="peliculas">
+          <MostrarPeliculas 
+            peliculas={peliculas} 
+            error={error} 
+            seleccionarPelicula={setPeliculaSeleccionada} 
+          />
+        </div>
+        <div id="informacion">
+          <MostrarContenido 
+            peliculaSeleccionada={peliculaSeleccionada}
+          />
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Enciclopedia;

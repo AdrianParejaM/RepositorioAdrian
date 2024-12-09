@@ -1,5 +1,5 @@
 import './App.css';
-import Enciclopedia from './Enciclopedia.jsx';
+import Enciclopedia from './Enciclopedia/Enciclopedia.jsx';
 
 function App() {
 
