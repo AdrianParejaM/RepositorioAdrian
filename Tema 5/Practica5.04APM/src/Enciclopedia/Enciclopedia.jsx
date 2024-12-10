@@ -5,6 +5,7 @@ import MostrarContenido from './MostrarContenido.jsx';
 import { obtenerDatos } from "../Biblioteca/funcionesDatos.js";
 
 const Enciclopedia = () => {
+  //Asignamos los useState;
   const [peliculas, setPeliculas] = useState([]);
   const [error, setError] = useState("");
   const [peliculaSeleccionada, setPeliculaSeleccionada] = useState(null);
@@ -12,6 +13,7 @@ const Enciclopedia = () => {
   //Obtenemos la API.
   const url = "https://swapi.dev/api/films/";
 
+  //Traemos los datos de la API con el "async-await".
   const traerPeliculas = async () => {
 
     try {
