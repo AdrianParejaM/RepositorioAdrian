@@ -21,7 +21,7 @@ const Protagonistas = () => {
         
         }
 
-        //cuando traiga los actores con allSettled comprobar el status fullfilled, si es fullfilled lo imprimes, si no, no lo imprimes y haces el siguiente
+        //cuando traiga los actores con Promise.allSettled comprobar el status fullfilled, si es fullfilled lo imprimes, si no, no lo imprimes y haces el siguiente
   
   };
 
