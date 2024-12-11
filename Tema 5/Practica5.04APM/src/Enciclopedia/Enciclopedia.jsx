@@ -5,7 +5,7 @@ import MostrarContenido from './MostrarContenido.jsx';
 import { obtenerDatos } from "../Biblioteca/funcionesDatos.js";
 
 const Enciclopedia = () => {
-  //Asignamos los useState;
+  //Asignamos los useState.
   const [peliculas, setPeliculas] = useState([]);
   const [error, setError] = useState("");
   const [peliculaSeleccionada, setPeliculaSeleccionada] = useState(null);

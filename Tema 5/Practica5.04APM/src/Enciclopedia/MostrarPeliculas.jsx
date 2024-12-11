@@ -1,13 +1,32 @@
-import React from 'react';
+// MostrarPeliculas.jsx
+import React, { useEffect } from 'react';
 
-const MostrarPeliculas = (props) => {
-  const peliculas = props.peliculas;
-  const error = props.error;
-  const seleccionarPelicula = props.seleccionarPelicula;
+const MostrarPeliculas = ({ peliculas, error, seleccionarPelicula }) => {
 
-  const clicPeliculas = (pelicula) => {
-    seleccionarPelicula(pelicula);
+  // Función para manejar el evento de clic delegando en el contenedor.
+  const manejarClicPeliculas = (evento) => {
+    const elemento = evento.target;
+
+    // Verificamos si el clic es un elemento con la clase "elementoPelicula".
+    if (elemento.classList.contains('elementoPelicula')) {
+      const titulo = elemento.textContent;
+      const peliculaSeleccionada = peliculas.find(pelicula => pelicula.title === titulo);
+      if (peliculaSeleccionada) {
+        seleccionarPelicula(peliculaSeleccionada);
+      }
+    }
   };
+
+  // Añadimos el "addEventListener" al contenedor de la lista.
+  useEffect(() => {
+    const lista = document.getElementById('listaPeliculas');
+    lista.addEventListener('click', manejarClicPeliculas, false);
+
+    // Limpiamos el evento cuando se desmonta el componente.
+    return () => {
+      lista.removeEventListener('click', manejarClicPeliculas, false);
+    };
+  }, [peliculas]);
 
   return (
     <>
@@ -20,7 +39,6 @@ const MostrarPeliculas = (props) => {
             <li
               key={pelicula.episode_id}
               className="elementoPelicula"
-              onClick={() => clicPeliculas(pelicula)}
             >
               {pelicula.title}
             </li>
