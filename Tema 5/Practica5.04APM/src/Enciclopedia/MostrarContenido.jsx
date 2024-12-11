@@ -3,6 +3,7 @@ import { fechaFormatoEuropeo } from "../Biblioteca/Biblioteca.js";
 import Protagonistas from './Protagonistas.jsx';
 
 const MostrarContenido = (props) => {
+  //Componente para mostrar únicamente el contenido de la película.
   const peliculaSeleccionada = props.peliculaSeleccionada;
 
   return (

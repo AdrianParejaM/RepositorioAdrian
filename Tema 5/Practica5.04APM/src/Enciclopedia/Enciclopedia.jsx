@@ -28,7 +28,7 @@ const Enciclopedia = () => {
     }
   
   };
-
+  //Con el useEffect ejecutamos la función de traerPeliculas.
   useEffect(() => {
     traerPeliculas();
   }, []);
