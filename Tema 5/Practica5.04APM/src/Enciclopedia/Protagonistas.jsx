@@ -1,36 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { obtenerDatos } from "../Biblioteca/funcionesDatos.js";
+import DetallesProtagonista from './DetallesProtagonistas.jsx';
 
 const Protagonistas = ({ pelicula }) => {
+  //Creamos los useState.
   const [protagonistas, setProtagonistas] = useState([]);
   const [error, setError] = useState(null);
   const [detallesProtagonista, setDetallesProtagonista] = useState(null);
 
+  // Función para traer protagonistas.
+  const traerProtagonistas = async () => {
+    try {
+      const urlsPersonajes = pelicula.characters;
+
+      const promesas = urlsPersonajes.map((url, index) => {
+        if (index < 10) {
+          return obtenerDatos(url);
+        }
+        return null;
+      }).filter(Boolean);
+
+      const resultados = await Promise.allSettled(promesas);
+
+      const personajesCompletos = resultados
+        .filter(resultado => resultado.status === 'fulfilled')
+        .map(resultado => resultado.value);
+
+      setProtagonistas(personajesCompletos);
+    } catch (error) {
+      setError(`Error al obtener los protagonistas: ${error.message}`);
+    }
+  };
+
+  //Hacemos el useEffect para hacer la función traerProtagonistas.
   useEffect(() => {
-    const traerProtagonistas = async () => {
-      try {
-        //en vez de usar slice usar un map
-        const urlsPersonajes = pelicula.characters.slice(0, 10); // Limitar a los 10 primeros protagonistas.
-
-        // Usar Promise.all para obtener datos de los personajes simultáneamente.
-        const promesas = urlsPersonajes.map(url => obtenerDatos(url));
-        const resultados = await Promise.allSettled(promesas);
-
-        const personajesCompletos = resultados
-          .filter(resultado => resultado.status === 'fulfilled')
-          .map(resultado => resultado.value);
-
-        setProtagonistas(personajesCompletos);
-      } catch (error) {
-        setError(`Error al obtener los protagonistas: ${error.message}`);
-      }
-    };
-
     if (pelicula) {
       traerProtagonistas();
     }
   }, [pelicula]);
 
+  //Función para mostrar los detalles.
   const mostrarDetalles = async (url) => {
     try {
       const detalles = await obtenerDatos(url);
@@ -54,17 +63,7 @@ const Protagonistas = ({ pelicula }) => {
           ))}
         </ul>
       )}
-      {detallesProtagonista && (
-        <div id="detallesProtagonista">
-          <h4>{detallesProtagonista.name}</h4>
-          <p>Género: {detallesProtagonista.gender}</p>
-          <p>Altura: {detallesProtagonista.height} cm</p>
-          <p>Peso: {detallesProtagonista.mass} kg</p>
-          <p>Color de pelo: {detallesProtagonista.hair_color}</p>
-          <p>Color de ojos: {detallesProtagonista.eye_color}</p>
-          {detallesProtagonista.image && <img src={detallesProtagonista.image} alt={detallesProtagonista.name} />}
-        </div>
-      )}
+      <DetallesProtagonista detalles={detallesProtagonista} />
     </div>
   );
 };

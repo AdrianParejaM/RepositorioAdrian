@@ -18,7 +18,9 @@ const MostrarContenido = (props) => {
             <p>Fecha de lanzamiento: <span>{fechaFormatoEuropeo(peliculaSeleccionada.release_date)}</span></p>
             <p>Sinopsis: <span>{peliculaSeleccionada.opening_crawl}</span></p>
           </div>
+          <div id="protagonistas">
           <Protagonistas pelicula={peliculaSeleccionada} />
+          </div>
         </>
       ) : (
         <h3 id="tituloPelicula">Selecciona una película</h3>

@@ -108,3 +108,19 @@ body {
   span{
     font-weight: normal;
   }
+
+  #protagonistas ul li{
+    list-style-type: none;
+    margin: 2%;
+  }
+
+  #protagonistas ul li button{
+    background-color: #d1d1d1;
+    color: #0f0f0f;
+  }
+
+  #protagonistas ul li button:hover{
+    background-color: #0f0f0f;
+    color: #d1d1d1;
+    transition: 0.3s;
+  }
