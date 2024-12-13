@@ -1,5 +1,4 @@
 // Función para traer datos desde una API pasada como parámetro.
-// Devuelve una promesa (fetch).
 const obtenerDatos = (url) => {
     return fetch(url)
     .then((respuesta) => {
