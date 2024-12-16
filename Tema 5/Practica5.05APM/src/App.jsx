@@ -1,12 +1,12 @@
 import './App.css';
-import Superheroes from './Componentes/Superheroes';
+import Personajes from './Componentes/Personajes.jsx';
 
 function App() {
 
 
   return (
     <>
-      <Superheroes />
+      <Personajes />
     </>
   );
 };

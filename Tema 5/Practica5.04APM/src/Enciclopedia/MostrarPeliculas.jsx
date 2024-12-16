@@ -1,4 +1,3 @@
-// MostrarPeliculas.jsx
 import React, { useEffect } from 'react';
 
 const MostrarPeliculas = ({ peliculas, error, seleccionarPelicula }) => {
