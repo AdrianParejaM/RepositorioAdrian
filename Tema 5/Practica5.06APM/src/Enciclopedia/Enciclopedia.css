@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #272727;
+  }
+  
+  /*Es el mismo h1 que el del puzle =)*/
+  h1 {
+    font-size: 3em; /* Tamaño grande del texto */
+    font-weight: bold;
+    color: transparent; /* Para el efecto de degradado */
+    background-image: linear-gradient(90deg,rgb(196, 19, 19), rgb(14, 14, 196)); /* Degradado de color */
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center; /* Centra el título en la página */
+    margin: 20px 0; /* Espaciado alrededor */
+    text-transform: uppercase; /* Letras en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+  
+    /* Sombra sutil */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+    /* Efecto de transición */
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  /* Efecto de hover */
+  h1:hover {
+    transform: scale(1.05); /* Aumenta ligeramente al pasar el cursor */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  /*Final del h1*/
+  
+  #contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  #peliculas {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    border: 2px solid rgb(14, 14, 196);
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  #listaPeliculas{
+    list-style: none;
+    padding: 5%;
+    cursor: pointer;
+  }
+  
+  .elementoPelicula{
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+  }
+  
+  .elementoPelicula{
+    background-color: #d1d1d1;
+    color: #0f0f0f;
+  }
+  
+  .elementoPelicula:hover{
+    background-color: #0f0f0f;
+    color: #d1d1d1;
+    transition: 0.3s;
+  }
+  
+  #peliculas h2 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  #informacion {
+    flex: 3;
+    border: 2px solid rgb(196, 19, 19);
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 300px;
+  }
+  
+  #titulo {
+    border: 2px solid rgb(14, 14, 196);
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  #titulo h3 {
+    margin: 0;
+  }
+  
+  /* Datos */
+  #datos {
+    border: 2px solid rgb(196, 19, 19);
+    padding: 10px;
+  }
+  
+  p{
+    font-weight: bold;
+  }
+  
+  span{
+    font-weight: normal;
+  }
+
+  #protagonistas ul li{
+    list-style-type: none;
+    margin: 2%;
+  }
+
+  #protagonistas ul li button{
+    background-color: #d1d1d1;
+    color: #0f0f0f;
+  }
+
+  #protagonistas ul li button:hover{
+    background-color: #0f0f0f;
+    color: #d1d1d1;
+    transition: 0.3s;
+  }
