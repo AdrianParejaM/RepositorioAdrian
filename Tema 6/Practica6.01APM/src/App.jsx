@@ -1,5 +1,5 @@
 import "./App.css";
-import CabeceraYNav from "./componentes/estructura/CabeceraYNav.jsx";
+import CabeceraLogin from "./componentes/estructura/CabeceraLogin.jsx";
 import Contenido from "./componentes/estructura/Contenido.jsx";
 import Menu from "./componentes/estructura/Menu.jsx";
 import Pie from "./componentes/estructura/Pie.jsx";
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <ProveedorSesion>
-        <CabeceraYNav />
+        <CabeceraLogin />
         <Menu />
         <Contenido>
           <RutasUT06 />

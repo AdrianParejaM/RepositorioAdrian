@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./CabeceraYNav.css";
+import "./CabeceraLogin.css";
 
-const CabeceraYNav = () => {
+const CabeceraLogin = () => {
   return (
     <>
       <div id='cabecera-navegacion'>
@@ -21,4 +21,4 @@ const CabeceraYNav = () => {
   );
 };
 
-export default CabeceraYNav;
+export default CabeceraLogin;
