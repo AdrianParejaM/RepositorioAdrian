@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <>
       <div className='inicioSesion'>
-        <h2>Se podrá iniciar sesión o crear cuenta.</h2>
+        <h2>Inicia sesión o crea una cuenta.</h2>
       </div>
     </>
   );
