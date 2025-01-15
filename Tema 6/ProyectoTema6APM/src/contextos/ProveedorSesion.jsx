@@ -12,7 +12,7 @@ const ProveedorSesion = ({children}) => {
     {children}
     </contextoSesion.Provider>
     </>
-  )
-}
+  );
+};
 
-export default ProveedorSesion
+export default ProveedorSesion;
