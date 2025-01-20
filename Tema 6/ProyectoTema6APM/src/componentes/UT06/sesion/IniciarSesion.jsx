@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { contextoSesion } from "../../../contextos/ProveedorSesion.jsx";
+import "./IniciarSesion.css";
 
 const IniciarSesion = () => {
-  // Se obtienen los objetos necesarios desde el contexto.
+  //Obtenemos los objetos del contexto.
+  const { actualizarDato, iniciarSesion, passwordOlvidada } = useContext(contextoSesion);
 
   return (
     <div className='cuentaUsuario'>
@@ -12,9 +15,36 @@ const IniciarSesion = () => {
         name='email'
         id='email'
         placeholder='Su correo electrónico.'
-        onChange={(e) => {}}
+        onChange={(e) => {
+          actualizarDato(e);
+        }}
       />
-      <button className='botonSesion' onClick={(e) => {}}>
+      <label htmlFor='password'>Contraseña</label>
+      <input
+        type='password'
+        name='password'
+        id='password'
+        placeholder='Su contraseña.'
+        onChange={(e) => {
+          actualizarDato(e);
+        }}
+      />
+
+      <p
+        className='passwordOlvidada'
+        onClick={(e) => {
+          passwordOlvidada(e);
+        }}
+      >
+        He olvidado mi contraseña
+      </p>
+
+      <button
+        className='botonSesion'
+        onClick={(e) => {
+          iniciarSesion();
+        }}
+      >
         Iniciar sesión
       </button>
     </div>

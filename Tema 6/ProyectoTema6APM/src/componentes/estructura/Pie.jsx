@@ -5,7 +5,7 @@ const Pie = () => {
   return (
     <>
       <footer id='pie'>
-        Este es el pié de página.
+        Este es el pie de página.
       </footer>
     </>
   );
