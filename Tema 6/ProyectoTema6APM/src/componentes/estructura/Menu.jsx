@@ -16,16 +16,16 @@ const Menu = () => {
 
           {sesionIniciada && (
           <>
-            <Link className='navegacion__enlace' to='/consulta'>
+            <Link className='navegacion__enlace' to='/listado'>
               Listado
             </Link>
-            <Link className='navegacion__enlace' to='/insercion'>
+            <Link className='navegacion__enlace' to='/'>
               Inserción
             </Link>
-            <Link className='navegacion__enlace' to='/borrado'>
+            <Link className='navegacion__enlace' to='/'>
               Borrado
             </Link>
-            <Link className='navegacion__enlace' to='/actualizacion'>
+            <Link className='navegacion__enlace' to='/'>
               Actualización
             </Link>
           </>
