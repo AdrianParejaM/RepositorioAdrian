@@ -12,7 +12,7 @@ const CabeceraLogin = () => {
     <>
       <div id='cabecera-navegacion'>
         <header id='cabecera'>
-          <h1>UT06 Almacenamiento con Supabase</h1>
+          <h1>CamisFutbol</h1>
           <div className='cabecera__sesion'></div>
         </header>
         {sesionIniciada && <p>Hola, {usuario.email}</p>}

@@ -19,15 +19,6 @@ const Menu = () => {
             <Link className='navegacion__enlace' to='/listado'>
               Listado
             </Link>
-            <Link className='navegacion__enlace' to='/'>
-              Inserción
-            </Link>
-            <Link className='navegacion__enlace' to='/'>
-              Borrado
-            </Link>
-            <Link className='navegacion__enlace' to='/'>
-              Actualización
-            </Link>
           </>
         )}
     </div>

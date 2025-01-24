@@ -2,31 +2,22 @@ import React, { useContext } from "react";
 import { contextoProductos } from "../../../contextos/ProveedorProductos.jsx";
 //import ListadoProducto from "../../Productos/ListadoProducto.jsx";
 import ListadoProductos from "../../Productos/ListadoProductos.jsx";
-//import "./Listados.css";
+import "./Listados.css";
 
 const Listados = () => {
   // Se obtiene lo necesario del contexto.
-  const { obtenerListado, obtenerProducto } = useContext(contextoProductos);
+  const { } = useContext(contextoProductos);
 
   return (
     <>
-      <h2>Listado de productos</h2>
-      <div
-          className='listado_productos'
-          onClick={(evento) => {
-            obtenerProducto(evento.target.id);
-          }}
-        >
-          <ListadoProductos />
+      <div className="contenedor_titulo_filtro">
+        <h2 className="listado_titulo">Camisetas</h2>
+        <div className="contenedor_filtro">
+          <label htmlFor="filtro_productos">Filtrar</label>
+          <input type="text" id="filtro_productos" name="filtro_productos" placeholder="Filtrar las camisetas..."/>
         </div>
-
-      <button
-            onClick={() => {
-              obtenerListado();
-            }}
-          >
-            Cargar productos
-          </button>
+      </div>
+          <ListadoProductos />
     </>
   );
 };
