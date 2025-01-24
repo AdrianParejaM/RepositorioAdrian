@@ -58,7 +58,7 @@
 }
 
 .nombre_precio_producto:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }

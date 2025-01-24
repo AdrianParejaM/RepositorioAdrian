@@ -16,8 +16,8 @@ const Menu = () => {
 
           {sesionIniciada && (
           <>
-            <Link className='navegacion__enlace' to='/listado'>
-              Listado
+            <Link className='navegacion__enlace' to='/camisetas'>
+              Camisetas
             </Link>
           </>
         )}

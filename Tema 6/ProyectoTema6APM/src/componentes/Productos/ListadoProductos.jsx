@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 //import "./ListadoProductos.css";
 import ListadoProducto from "./ListadoProducto.jsx";
 import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
 
 const ListadoProductos = () => {
-  const { listadoProductos } = useContext(contextoProductos);
+  const { listadoProductos, obtenerListado } = useContext(contextoProductos);
+
+  //Obtenemos los objetos en la carga del contexto (importante hacerlo aquí y no en el contexto jeje).
+  useEffect(() => {
+    obtenerListado();
+  }, []);
+
   return (
     <>
       <div id='listadoProductos'>

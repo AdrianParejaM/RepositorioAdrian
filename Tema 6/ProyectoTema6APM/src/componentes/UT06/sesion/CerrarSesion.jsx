@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import "./CerrarSesion.css";
 import { contextoSesion } from "../../../contextos/ProveedorSesion.jsx";
 
 const CerrarSesion = () => {

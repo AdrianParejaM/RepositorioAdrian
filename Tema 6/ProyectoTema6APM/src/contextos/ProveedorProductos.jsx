@@ -47,12 +47,14 @@ const ProveedorProductos = ({children}) => {
     }
     };
 
-    //Obtenemos los objetos en la carga del contexto.
-    useEffect(() => {
-      obtenerListado();
-    }, []);
 
 
+
+
+
+
+
+    
     //Exportamos todos los datos.
   const datosAExportar = {
     obtenerListado,

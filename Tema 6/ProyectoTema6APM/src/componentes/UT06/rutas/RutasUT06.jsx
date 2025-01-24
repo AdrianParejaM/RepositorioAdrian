@@ -12,7 +12,7 @@ const RutasUT06 = () => {
         <Route path='/' element={<Inicio />} />
         <Route path='/login' element={<Login />} />
         <Route path='*' element={<Error />} />
-        <Route path='/listado' element={<Listados />} />
+        <Route path='/camisetas' element={<Listados />} />
       </Routes>
     </>
   );
