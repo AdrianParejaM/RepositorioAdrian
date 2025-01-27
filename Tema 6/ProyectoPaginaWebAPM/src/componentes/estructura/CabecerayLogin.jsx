@@ -18,11 +18,11 @@ const CabecerayLogin = () => {
         {sesionIniciada && <p>Hola, {usuario.email}</p>}
         <nav className='navegacion__menu'>
         {!sesionIniciada ?
-          <Link className='navegacion__enlace' to='/login'>
+          <Link className='enlace_login' to='/login'>
             Login
           </Link>
         : /*Lo que he hecho es que si no ha iniciado sesión, que salga el botón de login y si está la sesión iniciada que salga el de cerrar sesión.*/
-        <Link className='navegacion__enlace' to='/'>
+        <Link className='enlace_cerrarsesion' to='/'>
             <CerrarSesion />
           </Link>}
         </nav>
