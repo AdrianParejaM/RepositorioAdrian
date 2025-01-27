@@ -50,35 +50,9 @@ const useDatos = (url) => {
     getDatos();
   }, []);
 
-  /**
-   * ¿Se puede mejorar controlando los errores?
-   *
-   * -> Sí, como un estado que se exporta.
-   *
-   */
 
-  /**
-   * ¿Se puede ampliar controlando la carga de contenidos?
-   *
-   * -> Sí con el estado "cargando" que también se exporta para
-   *    que sea controlado por el componente.
-   *
-   */
-
-  /**
-   * ¿Se puede modificar el estado?
-   *
-   * -> Sí, a través de una función que contiene el setter del
-   *    estado como borrarDatos. Nunca es recomendable exportar
-   *    el setDatos al exterior. Evitar a toda costa.
-   *
-   */
 
   return { datos, error, cargando, borrarDatos, retrasoDatos };
-  /**
-   * El hook no tiene extensión JSX ya que no exporta código XML,
-   * sino un objeto (o cualquier otra cosa necesaria).
-   * */
 };
 
 export default useDatos;

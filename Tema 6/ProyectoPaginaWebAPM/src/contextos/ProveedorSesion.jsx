@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from "react";
-import { supabaseConexion } from "../config/supabase.js";
+import { supabase } from "../supabase/supabase.js";
 import { useNavigate } from "react-router-dom";
 
 const contextoSesion = createContext();
@@ -26,7 +26,7 @@ const ProveedorSesion = ({children}) => {
   //Creamos la función para crear la cuenta.
   const crearCuenta = async () => {
     try {
-      const { data, error } = await supabaseConexion.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email: datosSesion.email,
         password: datosSesion.password,
       });
@@ -47,7 +47,7 @@ const ProveedorSesion = ({children}) => {
     setErrorUsuario(errorUsuarioInicial);
     try {
       
-      let { data, error } = await supabaseConexion.auth.signInWithPassword({
+      let { data, error } = await supabase.auth.signInWithPassword({
         email: datosSesion.email,
         password: datosSesion.password
       })
@@ -67,7 +67,7 @@ const ProveedorSesion = ({children}) => {
   const cerrarSesion = async () => {
     try {
       
-      await supabaseConexion.auth.signOut();
+      await supabase.auth.signOut();
       setErrorUsuario(errorUsuarioInicial);
     } catch (error) {
       setErrorUsuario(error.message);
@@ -77,7 +77,7 @@ const ProveedorSesion = ({children}) => {
   //Función para obtener el usuario.
   const obtenerUsuario = async () => {
     try {
-      const { data, error } = await supabaseConexion.auth.getUser();
+      const { data, error } = await supabase.auth.getUser();
 
       if (error) {
         throw error;
@@ -93,7 +93,7 @@ const ProveedorSesion = ({children}) => {
   //Función para obtener el usuario.
   const passwordOlvidada = async () => {
     try {
-      let { data, error } = await supabaseConexion.auth.resetPasswordForEmail(datosSesion.email);
+      let { data, error } = await supabase.auth.resetPasswordForEmail(datosSesion.email);
 
       if (error) {
         throw error;
@@ -112,7 +112,7 @@ const ProveedorSesion = ({children}) => {
   //Se gestiona la suscripción.
   useEffect(() => {
     
-    const suscripcion = supabaseConexion.auth.onAuthStateChange(
+    const suscripcion = supabase.auth.onAuthStateChange(
       (event, session) => {
         if (session) {
           navegar("/");
