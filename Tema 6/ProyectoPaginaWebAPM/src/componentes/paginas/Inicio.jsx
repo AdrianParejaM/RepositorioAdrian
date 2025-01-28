@@ -4,8 +4,8 @@ import "./Inicio.css";
 const Inicio = () => {
   return (
     <>
-      <h2>CamisFutbol</h2>
-      <div className='inicio__columnas'>
+      <h2 className="titulo_inicio">CamisFutbol</h2>
+      <div className='inicio_columnas'>
         <p className='columna_1'>
         <em>CamisFutbol</em> es una innovadora aplicación dedicada exclusivamente a la venta de camisetas de fútbol personalizadas y oficiales. Diseñada para los verdaderos 
         fanáticos del deporte rey, esta plataforma ofrece una experiencia única donde puedes explorar un extenso catálogo de camisetas de tus equipos favoritos, 

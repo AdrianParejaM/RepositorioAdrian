@@ -1,23 +1,33 @@
 .navegacion__menu {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: #ecf0f1; /* Fondo claro */
-  border-radius: 8px;
+  padding: 1%;
 }
 
-.navegacion__enlace {
-  color: #2c3e50;
-  text-decoration: none;
-  padding: 8px 16px;
-  border: 1px solid #3498db;
+.navegacion__enlace, .enlace_login, .boton_cerrar_sesion {
+  display: flex;
+  place-items: center;
+  justify-content: center; 
+  min-width: 120px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: rgba(36,36,36,255);
+  color: rgb(255, 255, 255);
+  border: 1px solid white;
   border-radius: 5px;
-  font-size: 1rem;
-  transition: background-color 0.3s, color 0.3s;
+  font-weight: bolder;
 }
 
-.navegacion__enlace:hover {
-  background-color: #3498db;
-  color: #fff;
+.navegacion__enlace:hover, .enlace_login:hover {
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  color: rgba(36,36,36,255);
+  transition: 0.4s;
+} 
+
+.boton_cerrar_sesion:hover {
+  background-color: rgb(230, 51, 51);
+  border-color: rgb(230, 51, 51);
+  transition: 0.4s;
 }

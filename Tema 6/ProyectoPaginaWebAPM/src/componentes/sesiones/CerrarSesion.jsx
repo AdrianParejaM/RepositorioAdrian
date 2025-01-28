@@ -6,8 +6,8 @@ const CerrarSesion = () => {
   const { cerrarSesion } = useContext(contextoSesion);
 
   return (
-    <div className='cerrarsesion__cerrar'>
-      <button
+    <div>
+      <button className='boton_cerrar_sesion'
         onClick={() => {
           cerrarSesion();
         }}
