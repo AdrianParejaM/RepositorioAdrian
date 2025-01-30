@@ -35,6 +35,9 @@ const ProveedorSesion = ({children}) => {
         throw error;
       } else {
         setErrorUsuario("Recibirás un correo electrónico para la confirmación de la creación de la cuenta.");
+
+        //Reseteamos los datos para que los input queden vacíos.
+        //setDatosSesion({ datosSesionInicial });
       }
     } catch (error) {
       setErrorUsuario(error.message);

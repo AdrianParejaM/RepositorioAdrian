@@ -4,7 +4,7 @@ import Inicio from "../paginas/Inicio.jsx";
 import Login from "../paginas/Login.jsx";
 import Error from "../paginas/Error.jsx";
 import Perfil from "../paginas/Perfil.jsx";
-//import Listados from "../paginas/Listados.jsx";
+import Listados from "../paginas/Listados.jsx";
 
 const RutasUT06 = () => {
   return (
@@ -14,8 +14,7 @@ const RutasUT06 = () => {
         <Route path='/login' element={<Login />} />
         <Route path='/perfil' element={<Perfil />} />
         <Route path='*' element={<Error />} />
-        {/*Esto es de la práctica 6.03.
-        <Route path='/camisetas' element={<Listados />} />*/}
+        <Route path='/camisetas' element={<Listados />} />
       </Routes>
     </>
   );

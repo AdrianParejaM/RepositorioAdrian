@@ -1,5 +1,4 @@
 #pie {
-  background-color: #222;
   color: #fff;
   padding: 1.5rem 1rem;
   text-align: center;
@@ -29,5 +28,4 @@
 
 .pie-nav p:hover {
   color: #7bb369;
-
 }

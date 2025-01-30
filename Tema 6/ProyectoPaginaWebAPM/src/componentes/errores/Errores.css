@@ -1,5 +1,8 @@
-.errores__error{
+.errores{
     color: red;
     text-align: center;
     font-weight: bold;
+    align-items: center;
+    text-align: center;
+    margin-top: 2%;
 }

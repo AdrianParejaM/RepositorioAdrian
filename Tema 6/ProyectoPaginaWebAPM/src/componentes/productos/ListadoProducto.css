@@ -1,0 +1,44 @@
+.listadoProducto {
+    width: calc(25% - 20px); /* 4 productos por fila con espacio entre ellos */
+    margin: 10px;
+    padding: 15px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .listadoProducto:hover {
+    transform: scale(1.05);
+  }
+  
+  .camisetas {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .nombre_producto, .nombre_precio {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .peso_descripcion_producto {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  #listadoProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  

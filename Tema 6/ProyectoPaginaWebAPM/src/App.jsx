@@ -5,6 +5,7 @@ import Menu from './componentes/estructura/Menu.jsx';
 import Contenido from './componentes/estructura/Contenido.jsx';
 import Rutas from './componentes/rutas/Rutas.jsx';
 import Pie from './componentes/estructura/Pie.jsx';
+import ProveedorProductos from './contextos/ProveedorProductos.jsx';
 
 function App() {
 
@@ -13,9 +14,11 @@ function App() {
     <ProveedorSesion>
       <CabecerayLogin />
       <Menu />
+      <ProveedorProductos>
       <Contenido>
         <Rutas />
       </Contenido>
+      </ProveedorProductos>
       <Pie />
     </ProveedorSesion>
     </>

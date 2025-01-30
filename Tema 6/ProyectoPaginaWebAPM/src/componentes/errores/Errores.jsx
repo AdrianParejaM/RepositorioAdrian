@@ -4,7 +4,7 @@ import "./Errores.css";
 const Errores = ({ children }) => {
   return (
     <>
-      <div className='errores__error'>{children}</div>
+      <div className='errores'>{children}</div>
     </>
   );
 };
