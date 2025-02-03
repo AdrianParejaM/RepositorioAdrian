@@ -1,25 +1,25 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import ListadoProducto from "./ListadoProducto.jsx";
 import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
 
 const ListadoProductos = () => {
-  const { listadoProductos, obtenerListado } = useContext(contextoProductos);
-
-  //Obtenemos los objetos en la carga del contexto (importante hacerlo aquí y no en el contexto jeje).
-  useEffect(() => {
-    obtenerListado();
-  }, []);
+  const { productosFiltrados, numeroProductos, precioMedio } = useContext(contextoProductos);
 
   return (
-    <>
-      <div id='listadoProductos'>
-        {Array.isArray(listadoProductos) && listadoProductos.length
-          ? listadoProductos.map((valor, indice, array) => {
-              return <ListadoProducto key={valor.idProductos} datos={valor} />;
-            })
-          : "No se han encontrado productos."}
-      </div>
-    </>
+    <div id="listadoProductos" className="listado-contenedor">
+        {numeroProductos > 0 ? (
+            productosFiltrados.map((valor) => (
+                <ListadoProducto key={valor.idProductos} datos={valor} />
+            ))
+        ) : (
+            <p>No se han encontrado productos.</p>
+        )}
+
+        <div className="resumen-listado">
+            <p><strong>Número de productos:</strong> {numeroProductos}</p>
+            <p><strong>Precio medio:</strong> {precioMedio}€</p>
+        </div>
+    </div>
   );
 };
 

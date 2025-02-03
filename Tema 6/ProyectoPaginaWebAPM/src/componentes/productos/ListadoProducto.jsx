@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-import "./ListadoProducto.css";
+import React from "react";
 
 const ListadoProducto = (props) => {
   const { id, nombreProducto, precio, descripcion, peso, imagen } = props.datos;

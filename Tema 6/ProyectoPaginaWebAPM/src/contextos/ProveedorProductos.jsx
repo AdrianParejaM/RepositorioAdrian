@@ -1,77 +1,93 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import { supabase } from "../supabase/supabase.js";
-import { useNavigate } from "react-router-dom";
 
 const contextoProductos = createContext();
 
-const ProveedorProductos = ({children}) => {
+const ProveedorProductos = ({ children }) => {
+  //Estados para los productos.
+    const [listadoProductos, setListadoProductos] = useState([]);
+    const [errorProductos, setErrorProductos] = useState("");
+    const [producto, setProducto] = useState(null);
+    
+    //Estado para los filtros.
+    const [filtro, setFiltro] = useState({ tipo: "", valor: "" });
 
-    //Valores iniciales para todos los datos.
-    const objetoInicial = {};
-    const arrayInicial = [];
-    const errorInicial = "";
-    const booleanInicial = false;
-    const productoInicial = {
-        nombreProducto: "",
-        peso: "",
-        precio: "",
-        imagen: "",
-        descripcion: "",
-    };
-
-      // Función para la navegación programática.
-      const navegarProductos = useNavigate();
-
-      /** Estados para proveer. */
-    const [listadoProductos, setListadoProductos] = useState(arrayInicial);
-    const [errorProductos, setErrorProductos] = useState(errorInicial);
-    const [producto, setProducto] = useState(productoInicial);
-
+    //Obtener todos los productos.
     const obtenerListado = async () => {
         try {
-          const { data, error } = await supabase.from("productos").select("*");
-          setListadoProductos(data);
+            const { data, error } = await supabase.from("productos").select("*");
+            if (error) throw error;
+            setListadoProductos(data);
         } catch (fallo) {
             setErrorProductos(fallo.message);
         }
-      };
-
-    //Función para obtener producto.
-    const obtenerProducto = async (id) => {
-    setErrorProductos(errorInicial);
-    try {
-        const { data, error } = await supabase
-        .from("productos")
-        .select("*")
-        .eq("id", id);
-        setProducto(data[0]);
-    } catch (fallo) {
-        setErrorProductos(fallo.message);
-    }
     };
 
+    // Obtener un solo producto.
+    const obtenerProducto = async (id) => {
+      setErrorProductos("");
+      try {
+          const { data, error } = await supabase.from("productos").select("*").eq("id", id);
+          if (error) throw error;
+          setProducto(data[0]);
+      } catch (fallo) {
+          setErrorProductos(fallo.message);
+      }
+    };
 
+    //Filtrar los productos de uno en uno.
+    const productosFiltrados = listadoProductos.filter(producto => {
+        let cumpleFiltro = true;
 
+        if (filtro.tipo === "nombre" && filtro.valor) {
+            cumpleFiltro = cumpleFiltro && producto.nombreProducto.toLowerCase().includes(filtro.valor.toLowerCase());
+        }
 
+        if (filtro.tipo === "precio" && filtro.valor) {
+            cumpleFiltro = cumpleFiltro && producto.precio <= filtro.valor;
+        }
 
+        if (filtro.tipo === "peso" && filtro.valor) {
+            cumpleFiltro = cumpleFiltro && producto.peso <= filtro.valor;
+        }
 
+        return cumpleFiltro;
+    });
 
+    const manejarFiltro = (tipo, valor) => {
+      setFiltro({ tipo, valor });
+    };
 
+    // Calcular el número de productos filtrados.
+    const numeroProductos = productosFiltrados.length;
+
+    // Calcular el precio total de los productos filtrados.
+    const precioTotal = productosFiltrados.reduce((total, producto) => total + producto.precio, 0);
     
-    //Exportamos todos los datos.
-  const datosAExportar = {
-    obtenerListado,
-    obtenerProducto,
-    listadoProductos
-  };
+    // Calcular el precio medio con solo 2 decimales, que en esto me ayudó el chatGPT que se tiene que usar toFixed.
+    const precioMedio = numeroProductos > 0 ? (precioTotal / numeroProductos).toFixed(2) : 0;
 
-  return (
-    <>
-    <contextoProductos.Provider value={datosAExportar}>
-    {children}
-    </contextoProductos.Provider>
-    </>
-  );
+    useEffect(() => {
+        obtenerListado();
+    }, []);
+
+    const datosAExportar = {
+        listadoProductos,
+        obtenerListado,
+        obtenerProducto,
+        filtro,
+        setFiltro,
+        productosFiltrados,
+        manejarFiltro,
+        numeroProductos,
+        precioMedio
+    };
+
+    return (
+        <contextoProductos.Provider value={datosAExportar}>
+            {children}
+        </contextoProductos.Provider>
+    );
 };
 
 export default ProveedorProductos;
