@@ -19,6 +19,9 @@ const Menu = () => {
             <Link className='navegacion__enlace' to='/camisetas'>
               Camisetas
             </Link>
+            <Link className='navegacion__enlace' to='/productos'>
+              Productos
+            </Link>
           </>
         )}
     </div>
