@@ -41,6 +41,15 @@ const Listados = () => {
                     value={filtro.tipo === "peso" ? filtro.valor : ""}
                     onChange={(e) => manejarFiltro("peso", e.target.value)}
                 />
+
+                {/*Botón para añadir camisetas*/}
+                <input
+                    type="button"
+                    className="boton_anyadir_camisetas"
+                    name="anyadirCamisetas"
+                    value="Añadir camisetas"
+                    onChange={(e) => e}
+                />
             </div>
         </div>
         <ListadoProductos />

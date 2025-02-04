@@ -5,7 +5,6 @@ import Login from "../paginas/Login.jsx";
 import Error from "../paginas/Error.jsx";
 import Perfil from "../paginas/Perfil.jsx";
 import Listados from "../paginas/Listados.jsx";
-import Productos from "../paginas/Productos.jsx";
 
 const RutasUT06 = () => {
   return (
@@ -16,7 +15,6 @@ const RutasUT06 = () => {
         <Route path='/perfil' element={<Perfil />} />
         <Route path='*' element={<Error />} />
         <Route path='/camisetas' element={<Listados />} />
-        <Route path='/productos' element={<Productos />} />
       </Routes>
     </>
   );
