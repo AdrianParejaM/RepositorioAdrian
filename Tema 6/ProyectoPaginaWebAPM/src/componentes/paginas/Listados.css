@@ -36,6 +36,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  flex-wrap: nowrap; /* Asegura que los elementos estén en una sola línea */
 }
 
 .contenedor_filtro label {
@@ -136,7 +137,10 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  align-items: center;
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  margin: 10px; /* Margen para separar del último input */
+  white-space: nowrap; /* Evita que el texto del botón se divida en varias líneas */
 }
 
 .boton_anyadir_camisetas:hover {

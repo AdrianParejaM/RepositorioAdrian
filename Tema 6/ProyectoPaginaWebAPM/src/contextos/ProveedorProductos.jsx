@@ -1,13 +1,23 @@
 import React, { useState, createContext, useEffect } from "react";
 import { supabase } from "../supabase/supabase.js";
+import { generarUuidAleatorio } from "../biblioteca/biblioteca.js";
+
 
 const contextoProductos = createContext();
 
 const ProveedorProductos = ({ children }) => {
+    const listadoProductosInicial = [];
+    const productoInicial = {
+        nombreProducto: "",
+        peso: 0,
+        precio: 0,
+        imagen: "",
+        descripcion: "",
+      };
   //Estados para los productos.
-    const [listadoProductos, setListadoProductos] = useState([]);
+    const [listadoProductos, setListadoProductos] = useState(listadoProductosInicial);
     const [errorProductos, setErrorProductos] = useState("");
-    const [producto, setProducto] = useState(null);
+    const [producto, setProducto] = useState(productoInicial);
     
     //Estado para los filtros.
     const [filtro, setFiltro] = useState({ tipo: "", valor: "" });
@@ -24,10 +34,10 @@ const ProveedorProductos = ({ children }) => {
     };
 
     // Obtener un solo producto.
-    const obtenerProducto = async (id) => {
+    const obtenerProducto = async (idProductos) => {
       setErrorProductos("");
       try {
-          const { data, error } = await supabase.from("productos").select("*").eq("id", id);
+          const { data, error } = await supabase.from("productos").select("*").eq("id", idProductos);
           if (error) throw error;
           setProducto(data[0]);
       } catch (fallo) {
@@ -67,6 +77,27 @@ const ProveedorProductos = ({ children }) => {
     // Calcular el precio medio con solo 2 decimales, que en esto me ayudó el chatGPT que se tiene que usar toFixed.
     const precioMedio = numeroProductos > 0 ? (precioTotal / numeroProductos).toFixed(2) : 0;
 
+    const actualizarDato = (evento) => {
+        const { name, value } = evento.target;
+        setProducto({ ...producto, [name]: value });
+    };
+
+    const insertarCamisetas = async () => {
+        try {
+          producto.idProductos = generarUuidAleatorio();
+          const {data, error} = await supabase.from("productos").insert(producto);
+          if(error){
+            console.error(error.message)
+          }
+          else{
+            setListadoProductos([...listadoProductos, producto]);
+            setProducto(productoInicial);
+          }
+        } catch (error) {
+          setErrorProductos(error.message);
+        }
+      };
+
     useEffect(() => {
         obtenerListado();
     }, []);
@@ -80,7 +111,9 @@ const ProveedorProductos = ({ children }) => {
         productosFiltrados,
         manejarFiltro,
         numeroProductos,
-        precioMedio
+        precioMedio,
+        actualizarDato,
+        insertarCamisetas
     };
 
     return (

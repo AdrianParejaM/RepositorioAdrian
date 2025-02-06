@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
 import ListadoProductos from "../productos/ListadoProductos.jsx";
+import { Link } from "react-router-dom";
 import "./Listados.css";
 
 const Listados = () => {
@@ -43,13 +44,10 @@ const Listados = () => {
                 />
 
                 {/*Botón para añadir camisetas*/}
-                <input
-                    type="button"
-                    className="boton_anyadir_camisetas"
-                    name="anyadirCamisetas"
-                    value="Añadir camisetas"
-                    onChange={(e) => e}
-                />
+                <Link className='boton_anyadir_camisetas' to='/camisetas/insertarCamisetas'>
+                    Insertar Camiseta
+                </Link>
+                
             </div>
         </div>
         <ListadoProductos />

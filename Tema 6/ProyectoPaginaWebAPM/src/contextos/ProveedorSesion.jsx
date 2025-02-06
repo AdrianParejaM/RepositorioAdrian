@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 const contextoSesion = createContext();
 
 const ProveedorSesion = ({children}) => {
+  //Creamos variables con datos vacíos.
   const datosSesionInicial = {
     email: "",
     password: "",
