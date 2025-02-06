@@ -2,6 +2,7 @@
                 {/*Usar useNavigate para redirigir a la página de camisetas una vez hecho clic en boton*/}
 import React, { useContext } from "react";
 import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
+import "./InsertarCamiseta.css";
 
 
 const InsertarCamiseta = () => {
