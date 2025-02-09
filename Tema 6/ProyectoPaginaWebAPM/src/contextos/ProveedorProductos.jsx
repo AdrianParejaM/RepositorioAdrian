@@ -41,7 +41,7 @@ const ProveedorProductos = ({ children }) => {
     const obtenerProducto = async (idProductos) => {
       setErrorProductos("");
       try {
-          const { data, error } = await supabase.from("productos").select("*").eq("id", idProductos);
+          const { data, error } = await supabase.from("productos").select("*").eq("idProductos", idProductos);
           if (error) throw error;
           setProducto(data[0]);
       } catch (fallo) {
@@ -126,23 +126,21 @@ const ProveedorProductos = ({ children }) => {
     const editarCamisetas = async () => {
         try {
             const { error } = await supabase
-                .from("productos")
-                .update({
-                    nombreProducto: producto.nombreProducto,
-                    precio: producto.precio,
-                    descripcion: producto.descripcion,
-                    imagen: producto.imagen,
-                    peso: producto.peso,
-                })
-                .eq("idProductos", producto.idProductos); // Usamos el id del producto para actualizarlo.
+                .from("productos").update(producto).eq("idProductos", producto.idProductos);
     
             if (error) throw error.message;
-    
-            navigate(-1);
-    
+
+            const cambioProductos = listadoProductos.map((productoAnterior =>{
+                return productoAnterior.id === producto.id ? producto : productoAnterior;
+      
+            }));
+            setListadoProductos(cambioProductos);
+            setProducto(productoInicial);
+
         } catch (error) {
             setErrorProductos(error.message);
         }
+        navigate(-1);
     };
 
     useEffect(() => {
@@ -162,7 +160,8 @@ const ProveedorProductos = ({ children }) => {
         actualizarDato,
         insertarCamisetas,
         borrarCamisetas,
-        editarCamisetas
+        editarCamisetas,
+        producto
     };
 
     return (

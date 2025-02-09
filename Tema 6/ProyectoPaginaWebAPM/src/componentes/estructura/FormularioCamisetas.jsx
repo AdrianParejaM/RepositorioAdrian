@@ -4,7 +4,7 @@ import "./FormularioCamisetas.css";
 
 const FormularioCamisetas = () => {
 
-    const { actualizarDato } = useContext(contextoProductos);
+    const { actualizarDato, producto } = useContext(contextoProductos);
 
   return (
     <>
@@ -16,6 +16,7 @@ const FormularioCamisetas = () => {
           id="nombreProducto"
           className="input-text"
           placeholder="Nombre del producto..."
+          value={producto.nombreProducto || ""}
           onChange={(e) => actualizarDato(e)}
         />
 
@@ -26,6 +27,7 @@ const FormularioCamisetas = () => {
           id="peso"
           className="input-text"
           placeholder="Peso del producto..."
+          value={producto.peso || ""}
           min={0}
           onChange={(e) => actualizarDato(e)}
         />
@@ -37,6 +39,7 @@ const FormularioCamisetas = () => {
           id="precio"
           className="input-text"
           placeholder="Precio del producto..."
+          value={producto.precio || ""}
           min={0}
           onChange={(e) => actualizarDato(e)}
         />
@@ -48,6 +51,7 @@ const FormularioCamisetas = () => {
           id="imagen"
           className="input-text"
           placeholder="Inserte URL de la imagen..."
+          value={producto.imagen || ""}
           onChange={(e) => actualizarDato(e)}
         />
 
@@ -58,6 +62,7 @@ const FormularioCamisetas = () => {
           id="descripcion"
           className="input-text"
           placeholder="Descripción del producto..."
+          value={producto.descripcion || ""}
           onChange={(e) => actualizarDato(e)}
         />
     </div>
