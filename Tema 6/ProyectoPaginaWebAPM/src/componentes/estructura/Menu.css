@@ -13,15 +13,15 @@
   margin-right: 10px;
   margin-left: 10px;
   background-color: #0e110d;
-  color: rgb(255, 255, 255);
-  border: 1px solid white;
+  color: rgb(238, 238, 238);
+  border: 1px solid rgb(238, 238, 238);
   border-radius: 5px;
   font-weight: bolder;
 }
 
 .navegacion__enlace:hover, .enlace_login:hover {
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
+  background-color: rgb(238, 238, 238);
+  border-color: rgb(238, 238, 238);
   color: #0e110d;
   transition: 0.4s;
 } 

@@ -1,4 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabase/supabase.js";
 import { generarUuidAleatorio } from "../biblioteca/biblioteca.js";
 
@@ -21,6 +22,9 @@ const ProveedorProductos = ({ children }) => {
     
     //Estado para los filtros.
     const [filtro, setFiltro] = useState({ tipo: "", valor: "" });
+
+    //Creamos la variable navigate para poder redireccionar a la página anterior cuando se crea o edita un producto.
+    const navigate = useNavigate();
 
     //Obtener todos los productos.
     const obtenerListado = async () => {
@@ -77,11 +81,13 @@ const ProveedorProductos = ({ children }) => {
     // Calcular el precio medio con solo 2 decimales, que en esto me ayudó el chatGPT que se tiene que usar toFixed.
     const precioMedio = numeroProductos > 0 ? (precioTotal / numeroProductos).toFixed(2) : 0;
 
+    //Actualizamos los datos.
     const actualizarDato = (evento) => {
         const { name, value } = evento.target;
         setProducto({ ...producto, [name]: value });
     };
 
+    //Función para insertar las camisetas.
     const insertarCamisetas = async () => {
         try {
           producto.idProductos = generarUuidAleatorio();
@@ -96,7 +102,48 @@ const ProveedorProductos = ({ children }) => {
         } catch (error) {
           setErrorProductos(error.message);
         }
-      };
+        navigate(-1);
+    };
+
+    //Función para borrar las camisetas.
+    const borrarCamisetas = async (idProductos) => {
+        try {
+            const { data, error } = await supabase.from("productos").delete().eq("idProductos", idProductos);
+
+            const camisetasFiltradas = listadoProductos.filter((camiseta) => {
+                if (camiseta.idProductos !== idProductos) {
+                  return camiseta;
+                }
+              });
+              setListadoProductos(camisetasFiltradas);
+
+        }catch (error) {
+            setErrorProductos(error.message);
+        }
+    };
+
+    //Función para editar las camisetas.
+    const editarCamisetas = async () => {
+        try {
+            const { error } = await supabase
+                .from("productos")
+                .update({
+                    nombreProducto: producto.nombreProducto,
+                    precio: producto.precio,
+                    descripcion: producto.descripcion,
+                    imagen: producto.imagen,
+                    peso: producto.peso,
+                })
+                .eq("idProductos", producto.idProductos); // Usamos el id del producto para actualizarlo.
+    
+            if (error) throw error.message;
+    
+            navigate(-1);
+    
+        } catch (error) {
+            setErrorProductos(error.message);
+        }
+    };
 
     useEffect(() => {
         obtenerListado();
@@ -113,7 +160,9 @@ const ProveedorProductos = ({ children }) => {
         numeroProductos,
         precioMedio,
         actualizarDato,
-        insertarCamisetas
+        insertarCamisetas,
+        borrarCamisetas,
+        editarCamisetas
     };
 
     return (

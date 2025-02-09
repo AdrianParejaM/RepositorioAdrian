@@ -1,23 +1,25 @@
 import React, { useContext } from "react";
 import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
-import "./InsertarCamiseta.css";
 import FormularioCamisetas from "../estructura/FormularioCamisetas.jsx";
 
-const InsertarCamiseta = () => {
-  const { insertarCamisetas } = useContext(contextoProductos);
-  
+const EditarCamiseta = () => {
+
+    const { editarCamisetas } = useContext(contextoProductos);
+
   return (
+    <>
     <div className="formularioInsertar">
-      <h2 className="listado_titulo">Insertar Camiseta</h2>
+      <h2 className="listado_titulo">Editar Camiseta</h2>
       <FormularioCamisetas />
       <button
           className="boton-insertar"
-          onClick={() => insertarCamisetas()}
+          onClick={() => editarCamisetas()}
       >
-          Insertar Camiseta
+          Editar Camiseta
       </button>
     </div>
+    </>
   );
 };
 
-export default InsertarCamiseta;
+export default EditarCamiseta;

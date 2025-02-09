@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import ListadoProducto from "./ListadoProducto.jsx";
 import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
 
-const ListadoProductos = () => {
+const ListadoProductos = ({borrado}) => {
   const { productosFiltrados, numeroProductos, precioMedio } = useContext(contextoProductos);
 
   return (

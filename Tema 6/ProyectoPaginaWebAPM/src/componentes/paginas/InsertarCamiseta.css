@@ -1,0 +1,30 @@
+.formularioInsertar {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: transparent;
+    text-align: center;
+}
+  
+.boton-insertar {
+    margin-top: 5%;
+    background-color: #0e110d;
+    color: rgb(238, 238, 238);
+    border: 1px solid rgb(238, 238, 238);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    align-self: center;
+}
+  
+.boton-insertar:hover {
+    background-color: rgb(238, 238, 238);
+    border-color: rgb(238, 238, 238);
+    color: #0e110d;
+    transition: 0.4s;
+}
+  

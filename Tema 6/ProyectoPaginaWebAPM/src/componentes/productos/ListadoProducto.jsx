@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { contextoProductos } from "../../contextos/ProveedorProductos";
+import { Link } from "react-router-dom";
 
 const ListadoProducto = (props) => {
   const { id, nombreProducto, precio, descripcion, peso, imagen } = props.datos;
+  const { borrarCamisetas, obtenerProducto  } = useContext(contextoProductos);
+
   return (
     <>
       <div className='listadoProducto' id={id}>
@@ -10,8 +14,12 @@ const ListadoProducto = (props) => {
         <h3 className="nombre_precio"><em>{precio}€</em></h3>
         <h4 className="peso_descripcion_producto">{peso} g - {descripcion}</h4>
         <div className="botones-container">
-          <p className="editar-camiseta">Editar Camiseta</p>
-          <p className="eliminar-camiseta">Eliminar Camiseta</p>
+        <Link className='editar-camiseta' to='/camisetas/editarCamisetas'>
+          Editar Camiseta
+        </Link>
+          <p className="eliminar-camiseta" onClick={() => borrarCamisetas(props.datos.idProductos)}>
+          Eliminar Camiseta
+          </p>
         </div>
       </div>
     </>

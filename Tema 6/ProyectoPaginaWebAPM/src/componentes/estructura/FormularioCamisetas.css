@@ -1,0 +1,29 @@
+.formularioBasico {
+    display: flex;
+    flex-direction: column;
+}
+  
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.input-text {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #fff;
+    color: #000;
+    transition: border-color 0.3s ease-in-out;
+}
+  
+.input-text:focus {
+    border-color: #007bff;
+    outline: none;
+}

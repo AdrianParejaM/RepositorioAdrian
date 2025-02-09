@@ -6,6 +6,8 @@ import Error from "../paginas/Error.jsx";
 import Perfil from "../paginas/Perfil.jsx";
 import Listados from "../paginas/Listados.jsx";
 import InsertarCamiseta from "../paginas/InsertarCamiseta.jsx";
+import EditarCamiseta from "../paginas/EditarCamiseta.jsx";
+import ListasCompra from "../paginas/ListasCompra.jsx";
 
 const RutasUT06 = () => {
   return (
@@ -17,6 +19,8 @@ const RutasUT06 = () => {
         <Route path='*' element={<Error />} />
         <Route path='/camisetas' element={<Listados />} />
         <Route path='/camisetas/insertarCamisetas' element={<InsertarCamiseta />} />
+        <Route path='/camisetas/editarCamisetas' element={<EditarCamiseta />} />
+        <Route path='/listas' element={<ListasCompra />} />
       </Routes>
     </>
   );
