@@ -6,20 +6,23 @@ import Contenido from './componentes/estructura/Contenido.jsx';
 import Rutas from './componentes/rutas/Rutas.jsx';
 import Pie from './componentes/estructura/Pie.jsx';
 import ProveedorProductos from './contextos/ProveedorProductos.jsx';
+import { ProveedorListas } from './contextos/ProveedorListas.jsx';
 
 function App() {
 
   return (
     <>
     <ProveedorSesion>
-      <CabecerayLogin />
-      <Menu />
-      <ProveedorProductos>
-      <Contenido>
-        <Rutas />
-      </Contenido>
-      </ProveedorProductos>
-      <Pie />
+      <ProveedorListas>
+        <CabecerayLogin />
+        <Menu />
+        <ProveedorProductos>
+        <Contenido>
+          <Rutas />
+        </Contenido>
+        </ProveedorProductos>
+        <Pie />
+      </ProveedorListas>
     </ProveedorSesion>
     </>
   );

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ListadoProducto = (props) => {
   const { id, nombreProducto, precio, descripcion, peso, imagen } = props.datos;
-  const { borrarCamisetas, obtenerProducto  } = useContext(contextoProductos);
+  const { borrarCamisetas } = useContext(contextoProductos);
 
   return (
     <>
