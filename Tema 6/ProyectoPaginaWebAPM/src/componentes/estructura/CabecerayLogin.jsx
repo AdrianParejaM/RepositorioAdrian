@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./CabeceraLogin.css";
-import { contextoSesion } from "../../contextos/ProveedorSesion.jsx";
+import useSesion from "../../hooks/useSesion.jsx";
 import CerrarSesion from "../sesiones/CerrarSesion.jsx";
 
 const CabecerayLogin = () => {
 
-  const { sesionIniciada, usuario } = useContext(contextoSesion);
+  const { sesionIniciada, usuario } = useSesion();
 
   return (
     <>

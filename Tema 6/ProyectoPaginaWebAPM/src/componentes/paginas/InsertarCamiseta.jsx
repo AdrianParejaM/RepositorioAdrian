@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
+import React from "react";
+import useProducto from "../../hooks/useProducto.jsx";
 import "./InsertarCamiseta.css";
-import FormularioCamisetas from "../estructura/FormularioCamisetas.jsx";
+import FormularioCamisetas from "../estructura/formularios/FormularioCamisetas.jsx";
 
 const InsertarCamiseta = () => {
-  const { insertarCamisetas } = useContext(contextoProductos);
+  const { insertarCamisetas } = useProducto();
   
   return (
     <div className="formularioInsertar">

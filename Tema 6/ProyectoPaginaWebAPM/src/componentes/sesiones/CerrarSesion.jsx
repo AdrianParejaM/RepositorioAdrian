@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { contextoSesion } from "../../contextos/ProveedorSesion.jsx";
+import React from "react";
+import useSesion from "../../hooks/useSesion.jsx";
 
 const CerrarSesion = () => {
 
-  const { cerrarSesion } = useContext(contextoSesion);
+  const { cerrarSesion } = useSesion();
 
   return (
     <div>

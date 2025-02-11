@@ -1,0 +1,94 @@
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.navegacion__enlace {
+    margin-bottom: 10px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.formulario input {
+    width: 50%;
+    max-width: 400px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #0e110d;
+    color: #fff;
+}
+
+.formulario .botones {
+    display: flex;
+    gap: 10px;
+}
+
+.formulario button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.listas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 900px;
+    min-height: auto;
+}
+
+.lista-item {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #0e110d;
+    text-align: center;
+}
+
+.crearNuevaLista {
+    background-color: #232b21;
+}
+
+.crearNuevaLista:hover {
+    background-color: #070806;
+    transition: 0.4s;
+}
+
+.eliminar {
+    background-color: #dc3545;
+}
+
+.eliminar:hover {
+    background-color: #b02a37;
+    transition: 0.4s;
+}
+
+.textoSinListas {
+    text-align: center;
+    font-weight: bold;
+}

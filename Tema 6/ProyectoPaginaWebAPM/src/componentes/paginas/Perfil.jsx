@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import { contextoSesion } from "../../contextos/ProveedorSesion.jsx";
+import React from "react";
+import useSesion from "../../hooks/useSesion.jsx";
 import "./Perfil.css";
 
 const Perfil = () => {
 
-    //He creado la página de perfil para que tenga más utilidad poner el nombre.
-    const { usuario } = useContext(contextoSesion);
+    //He creado la página de perfil para que tenga más utilidad poner el saludo al usuario..
+    const { usuario } = useSesion();
 
   return (
     <>

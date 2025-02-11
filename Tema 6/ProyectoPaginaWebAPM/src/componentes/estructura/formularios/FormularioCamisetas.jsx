@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
+import useProducto from "../../../hooks/useProducto.jsx";
 import "./FormularioCamisetas.css";
 
 const FormularioCamisetas = () => {
 
-    const { actualizarDato, producto } = useContext(contextoProductos);
+  //Traemos lo que se necesita en este componente del hook.
+    const { actualizarDato, producto } = useProducto();
 
   return (
     <>

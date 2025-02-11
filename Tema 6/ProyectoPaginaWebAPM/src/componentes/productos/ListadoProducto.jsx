@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { contextoProductos } from "../../contextos/ProveedorProductos";
+import React from "react";
+import useProducto from "../../hooks/useProducto.jsx";
 import { Link } from "react-router-dom";
 
 const ListadoProducto = (props) => {
   const { id, nombreProducto, precio, descripcion, peso, imagen } = props.datos;
-  const { borrarCamisetas } = useContext(contextoProductos);
+  const { borrarCamisetas } = useProducto();
 
   return (
     <>

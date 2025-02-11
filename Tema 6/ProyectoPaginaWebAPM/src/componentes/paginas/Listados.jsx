@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
-import { contextoProductos } from "../../contextos/ProveedorProductos.jsx";
+import React from "react";
 import ListadoProductos from "../productos/ListadoProductos.jsx";
+import useProducto from "../../hooks/useProducto.jsx";
 import { Link } from "react-router-dom";
 import "./Listados.css";
 
 const Listados = () => {
   //Importamos lo necesario.
-    const { filtro, manejarFiltro } = useContext(contextoProductos);
+    const { filtro, manejarFiltro } = useProducto();
 
     return (
       <>

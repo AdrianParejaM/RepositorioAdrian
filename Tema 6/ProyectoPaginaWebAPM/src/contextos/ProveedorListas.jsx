@@ -1,11 +1,22 @@
-// src/contextos/ProveedorListas.jsx
 import { createContext, useContext, useState, useEffect } from "react";
+import useSesion from "../hooks/useSesion.jsx";
 import { supabase } from "../supabase/supabase.js";
 
 const contextoListas = createContext();
 
 export const ProveedorListas = ({ children }) => {
-  const [listas, setListas] = useState([]);
+  //Casi pongo en vez de Predefinido default =).
+  const nombreListaPredefinido = "";
+  const mostrarPredefinido = false;
+  const listaVacia = [];
+
+  //Creamos los estados.
+  const [listas, setListas] = useState(listaVacia);
+  const [nombreNuevaLista, setNombreNuevaLista] = useState(nombreListaPredefinido);
+  const [mostrarFormulario, setMostrarFormulario] = useState(mostrarPredefinido); 
+
+  //Importamos lo necesario con los hooks.
+  const { usuario } = useSesion();
 
   // Obtenemos la lista de la compra del usuario que está la sesión iniciada.
   const obtenerListas = async (idUsuario) => {
@@ -40,12 +51,29 @@ export const ProveedorListas = ({ children }) => {
     }
   };
 
+  //Manejamos la creación de listas.
+  const manejarCrearLista = async () => {
+    if (!nombreNuevaLista.trim()) {
+      /*No he encontrado otra manera de hacer alguna alerta cuando está el nombre de la lista vacío.*/
+      alert("El nombre de la lista no puede estar vacío");
+      return;
+    }
+    await crearLista(nombreNuevaLista, usuario.id);
+    setNombreNuevaLista(nombreListaPredefinido); 
+    setMostrarFormulario(mostrarPredefinido); 
+  };
+
+  //Exportamos todos los datos.
   const datosAExportar = {
     obtenerListas,
     crearLista,
     borrarLista,
-    listas
-
+    listas,
+    nombreNuevaLista, 
+    setNombreNuevaLista,
+    mostrarFormulario, 
+    setMostrarFormulario,
+    manejarCrearLista
 };
 
   return (
