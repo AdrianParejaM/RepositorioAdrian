@@ -1,23 +1,25 @@
-.titulo_inicio {
-  font-size: 45px;
-  text-align: center;
-}
-
 .inicio_columnas {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 80px;
-  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.columna_1, .columna_2 {
-  flex: 1;
-  margin: 0 20px;
+.fila_1, .fila_2 {
   text-align: justify;
-  font-size: 20px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 15px;
 }
 
 em {
-  font-style: italic;
+  color: #7bb369;
+  font-weight: bold;
 }
