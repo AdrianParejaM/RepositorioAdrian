@@ -1,0 +1,10 @@
+.eliminar-camiseta:hover {
+    transform: scale(1.10);
+    transition: 0.4s;
+}
+
+.editar-camiseta:hover {
+    color: #333;
+    transform: scale(1.10);
+    transition: 0.4s;
+  }

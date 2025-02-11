@@ -1,6 +1,7 @@
 import React from "react";
 import useProducto from "../../hooks/useProducto.jsx";
 import { Link } from "react-router-dom";
+import './ListadoProducto.css';
 
 const ListadoProducto = (props) => {
 

@@ -14,7 +14,6 @@ const EditarCamiseta = () => {
     useEffect(() => {
       obtenerProducto(id)
     }, []);
-
    
   return (
     <>
