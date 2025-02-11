@@ -3,7 +3,8 @@ import useSesion from "../../hooks/useSesion.jsx";
 import "./IniciarSesion.css";
 
 const IniciarSesion = () => {
-  //Obtenemos los objetos del contexto.
+  
+  //Utilizamos el hook para llamar las funciones del contexto.
   const { actualizarDato, iniciarSesion, passwordOlvidada } = useSesion();
 
   return (

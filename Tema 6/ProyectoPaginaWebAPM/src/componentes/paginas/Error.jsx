@@ -1,6 +1,9 @@
 import React from "react";
 
 const Error = () => {
+
+  //Página de error.
+
   return (
     <>
       <h1>Se ha producido un error.</h1>

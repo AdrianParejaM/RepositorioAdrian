@@ -3,6 +3,7 @@ import useSesion from "../../hooks/useSesion.jsx";
 
 const CerrarSesion = () => {
 
+  //Utilizamos el hook para llamar las funciones del contexto.
   const { cerrarSesion } = useSesion();
 
   return (

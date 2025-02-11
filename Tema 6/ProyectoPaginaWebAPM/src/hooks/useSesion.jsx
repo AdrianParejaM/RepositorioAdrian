@@ -3,6 +3,7 @@ import { contextoSesion } from '../contextos/ProveedorSesion.jsx';
 
 const useSesion = () => {
 
+    //Traemos todo de las sesiones.
     const contexto = useContext(contextoSesion);
 
   return contexto;

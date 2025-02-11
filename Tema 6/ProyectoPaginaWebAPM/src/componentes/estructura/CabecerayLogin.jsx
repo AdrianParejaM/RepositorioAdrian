@@ -6,6 +6,7 @@ import CerrarSesion from "../sesiones/CerrarSesion.jsx";
 
 const CabecerayLogin = () => {
 
+  //Utilizamos el hook para llamar las funciones del contexto.
   const { sesionIniciada, usuario } = useSesion();
 
   return (

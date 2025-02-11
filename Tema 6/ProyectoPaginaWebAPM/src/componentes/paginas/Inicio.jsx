@@ -2,6 +2,9 @@ import React from "react";
 import "./Inicio.css";
 
 const Inicio = () => {
+
+  //Página de inicio.
+
   return (
     <>
       <h2 className="titulo_inicio">CamisFutbol</h2>

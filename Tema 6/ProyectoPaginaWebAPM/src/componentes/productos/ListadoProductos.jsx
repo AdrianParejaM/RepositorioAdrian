@@ -1,12 +1,20 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import ListadoProducto from "./ListadoProducto.jsx";
 import useProducto from "../../hooks/useProducto.jsx";
 
 const ListadoProductos = ({borrado}) => {
-  const { productosFiltrados, numeroProductos, precioMedio } = useProducto();
+
+  //Utilizamos el hook para llamar las funciones del contexto.
+  const { productosFiltrados, numeroProductos, precioMedio, obtenerListado } = useProducto();
+
+  //Hacemos el useEffect para que se carguen los productos.
+  useEffect(() => {
+    obtenerListado();
+}, []);
 
   return (
     <div id="listadoProductos" className="listado-contenedor">
+        {/*Mapeamos los productos.*/}
         {numeroProductos > 0 ? (
             productosFiltrados.map((valor) => (
                 <ListadoProducto key={valor.idProductos} datos={valor} />

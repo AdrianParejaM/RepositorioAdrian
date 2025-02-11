@@ -6,7 +6,7 @@ import FormularioListas from "../estructura/formularios/FormularioListas.jsx";
 
 const ListasCompra = () => {
 
-  //Importamos lo necesario con los hooks.
+  //Utilizamos los hooks para llamar las funciones del contexto.
   const { usuario } = useSesion();
   const { obtenerListas, borrarLista, listas, setMostrarFormulario } = useLista();
 
@@ -18,7 +18,6 @@ const ListasCompra = () => {
     }
   }, [usuario, obtenerListas]);
 
-
   return (
     <div className="container">
       <h2 className="listado_titulo">Mis Listas de Compra</h2>
@@ -26,7 +25,7 @@ const ListasCompra = () => {
       <button className="navegacion__enlace" onClick={() => setMostrarFormulario(true)}>
         Crear Nueva Lista
       </button>
-
+      {/*Traemos el formulario para crear listas (para ahorrar código aquí).*/}
       <FormularioListas />
   
       <ul className="listas-container">

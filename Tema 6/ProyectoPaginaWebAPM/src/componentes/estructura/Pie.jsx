@@ -2,6 +2,9 @@ import React from "react";
 import "./Pie.css";
 
 const Pie = () => {
+
+  //Página del pie.
+  
   return (
     <footer id="pie">
       <div className="pie-content">

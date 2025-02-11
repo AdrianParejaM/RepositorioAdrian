@@ -7,6 +7,7 @@ import Errores from "../errores/Errores.jsx";
 
 const Login = () => {
 
+    //Utilizamos el hook para llamar las funciones del contexto.
   const { errorUsuario } = useSesion();
 
   return (

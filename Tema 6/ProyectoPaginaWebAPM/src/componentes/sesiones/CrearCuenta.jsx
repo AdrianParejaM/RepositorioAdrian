@@ -3,6 +3,7 @@ import useSesion from "../../hooks/useSesion.jsx";
 
 const CrearCuenta = () => {
 
+  //Utilizamos el hook para llamar las funciones del contexto.
   const { crearCuenta, actualizarDato } = useSesion();
 
   return (

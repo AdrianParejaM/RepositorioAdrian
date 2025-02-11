@@ -5,6 +5,7 @@ import { supabase } from "../supabase/supabase.js";
 const contextoListas = createContext();
 
 export const ProveedorListas = ({ children }) => {
+
   //Casi pongo en vez de Predefinido default =).
   const nombreListaPredefinido = "";
   const mostrarPredefinido = false;
@@ -39,7 +40,6 @@ export const ProveedorListas = ({ children }) => {
       obtenerListas(idUsuario);
     }
   };
-  
 
   // Borrar una lista de la compra.
   const borrarLista = async (idLista, idUsuario) => {
@@ -54,7 +54,6 @@ export const ProveedorListas = ({ children }) => {
   //Manejamos la creación de listas.
   const manejarCrearLista = async () => {
     if (!nombreNuevaLista.trim()) {
-      /*No he encontrado otra manera de hacer alguna alerta cuando está el nombre de la lista vacío.*/
       alert("El nombre de la lista no puede estar vacío");
       return;
     }

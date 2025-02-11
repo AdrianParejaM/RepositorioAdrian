@@ -27,3 +27,7 @@ label {
     border-color: #007bff;
     outline: none;
 }
+
+.errorTexto {
+    color: red;
+}

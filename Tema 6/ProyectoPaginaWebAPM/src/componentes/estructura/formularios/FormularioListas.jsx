@@ -3,7 +3,7 @@ import useLista from "../../../hooks/useLista.jsx";
 
 const FormularioListas = () => {
 
-    //Traemos lo necesario del hook.
+      //Utilizamos el hook para llamar las funciones del contexto.
     const { nombreNuevaLista, setNombreNuevaLista, mostrarFormulario, setMostrarFormulario, manejarCrearLista } = useLista();
 
   return (

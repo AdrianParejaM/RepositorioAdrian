@@ -7,6 +7,8 @@ import { generarUuidAleatorio } from "../biblioteca/biblioteca.js";
 const contextoProductos = createContext();
 
 const ProveedorProductos = ({ children }) => {
+
+    //Estados predeterminados.
     const listadoProductosInicial = [];
     const productoInicial = {
         nombreProducto: "",
@@ -15,9 +17,10 @@ const ProveedorProductos = ({ children }) => {
         imagen: "",
         descripcion: "",
       };
-  //Estados para los productos.
+
+    //Estados para los productos.
     const [listadoProductos, setListadoProductos] = useState(listadoProductosInicial);
-    const [errorProductos, setErrorProductos] = useState("");
+    const [errorProductos, setErrorProductos] = useState([]);
     const [producto, setProducto] = useState(productoInicial);
     
     //Estado para los filtros.
@@ -37,11 +40,12 @@ const ProveedorProductos = ({ children }) => {
         }
     };
 
-    // Obtener un solo producto.
+    //Obtener un solo producto.
     const obtenerProducto = async (idProductos) => {
       setErrorProductos("");
       try {
           const { data, error } = await supabase.from("productos").select("*").eq("idProductos", idProductos);
+          //console.log(data);
           if (error) throw error;
           setProducto(data[0]);
       } catch (fallo) {
@@ -90,20 +94,35 @@ const ProveedorProductos = ({ children }) => {
     //Función para insertar las camisetas.
     const insertarCamisetas = async () => {
         try {
-          producto.idProductos = generarUuidAleatorio();
-          const {data, error} = await supabase.from("productos").insert(producto);
-          if(error){
-            console.error(error.message)
-          }
-          else{
-            setListadoProductos([...listadoProductos, producto]);
-            setProducto(productoInicial);
-          }
+            //No he sabido hacer otra manera para poner todos los errores.
+            let errores = [];
+            if (!producto.nombreProducto) errores.push("El nombre del producto es obligatorio.");
+            if (!producto.peso) errores.push("El peso del producto es obligatorio.");
+            if (!producto.precio) errores.push("El precio del producto es obligatorio.");
+            if (!producto.imagen) errores.push("La imagen del producto es obligatoria.");
+            if (!producto.descripcion) errores.push("La descripción del producto es obligatoria.");
+    
+            if (errores.length > 0) {
+                setErrorProductos(errores);
+                return;
+            }
+
+            producto.idProductos = generarUuidAleatorio();
+            const { data, error } = await supabase.from("productos").insert(producto);
+    
+            if (error) {
+                console.error(error.message);
+            } else {
+                setListadoProductos([...listadoProductos, producto]);
+                setProducto(productoInicial);
+                setErrorProductos([]);
+            }
         } catch (error) {
-          setErrorProductos(error.message);
+            setErrorProductos(error.message);
         }
         navigate(-1);
     };
+    
 
     //Función para borrar las camisetas.
     const borrarCamisetas = async (idProductos) => {
@@ -125,28 +144,40 @@ const ProveedorProductos = ({ children }) => {
     //Función para editar las camisetas.
     const editarCamisetas = async () => {
         try {
-            const { error } = await supabase
-                .from("productos").update(producto).eq("idProductos", producto.idProductos);
-    
-            if (error) throw error.message;
 
-            const cambioProductos = listadoProductos.map((productoAnterior =>{
-                return productoAnterior.id === producto.id ? producto : productoAnterior;
-      
-            }));
-            setListadoProductos(cambioProductos);
-            setProducto(productoInicial);
+            //Son los mismos errores que en insertar.
+            let errores = [];
+            if (!producto.nombreProducto) errores.push("El nombre del producto es obligatorio.");
+            if (!producto.peso) errores.push("El peso del producto es obligatorio.");
+            if (!producto.precio) errores.push("El precio del producto es obligatorio.");
+            if (!producto.imagen) errores.push("La imagen del producto es obligatoria.");
+            if (!producto.descripcion) errores.push("La descripción del producto es obligatoria.");
+    
+            if (errores.length > 0) {
+                setErrorProductos(errores);
+                return;
+            }
+
+            const { data, error } = await supabase.from("productos").update(producto).eq("idProductos", producto.idProductos);
+    
+            if (error) {
+
+                throw error.message;
+
+            }else{
+
+                setProducto(productoInicial);
+                setErrorProductos([]);
+                obtenerListado();
+                navigate(-1);
+            }
 
         } catch (error) {
             setErrorProductos(error.message);
         }
-        navigate(-1);
     };
 
-    useEffect(() => {
-        obtenerListado();
-    }, []);
-
+    //Exportamos todo.
     const datosAExportar = {
         listadoProductos,
         obtenerListado,
@@ -161,7 +192,9 @@ const ProveedorProductos = ({ children }) => {
         insertarCamisetas,
         borrarCamisetas,
         editarCamisetas,
-        producto
+        producto,
+        errorProductos,
+        setErrorProductos
     };
 
     return (

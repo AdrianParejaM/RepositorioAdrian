@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./Listados.css";
 
 const Listados = () => {
-  //Importamos lo necesario.
+    //Utilizamos el hook para llamar las funciones del contexto.
     const { filtro, manejarFiltro } = useProducto();
 
     return (
@@ -43,7 +43,7 @@ const Listados = () => {
                     onChange={(e) => manejarFiltro("peso", e.target.value)}
                 />
 
-                {/*Botón para añadir camisetas*/}
+                {/*Botón para añadir camisetas.*/}
                 <Link className='boton_anyadir_camisetas' to='/camisetas/insertarCamisetas'>
                     Insertar Camiseta
                 </Link>

@@ -10,6 +10,9 @@ import EditarCamiseta from "../paginas/EditarCamiseta.jsx";
 import ListasCompra from "../paginas/ListasCompra.jsx";
 
 const RutasUT06 = () => {
+
+  //Añadimos todas las rutas.
+
   return (
     <>
       <Routes>
@@ -19,7 +22,7 @@ const RutasUT06 = () => {
         <Route path='*' element={<Error />} />
         <Route path='/camisetas' element={<Listados />} />
         <Route path='/camisetas/insertarCamisetas' element={<InsertarCamiseta />} />
-        <Route path='/camisetas/editarCamisetas' element={<EditarCamiseta />} />
+        <Route path='/camisetas/editarCamisetas/:id' element={<EditarCamiseta />} />
         <Route path='/listas' element={<ListasCompra />} />
       </Routes>
     </>

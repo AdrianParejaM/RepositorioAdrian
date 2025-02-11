@@ -4,7 +4,9 @@ import "./Perfil.css";
 
 const Perfil = () => {
 
-    //He creado la página de perfil para que tenga más utilidad poner el saludo al usuario..
+    //He creado la página de perfil para que tenga más utilidad poner el saludo al usuario.
+
+    //Utilizamos el hook para llamar las funciones del contexto.
     const { usuario } = useSesion();
 
   return (
